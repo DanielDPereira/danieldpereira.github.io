@@ -73,7 +73,7 @@ def fetch_and_resize_image(img_source: str, max_size=(160, 100)):
         return None, str(e)
 
 
-def update_image_preview(label_widget, img_source):
+def update_image_preview(label_widget, img_source, max_size=(160, 100)):
     if not img_source or not str(img_source).strip():
         label_widget.config(text="🖼️ Sem imagem", image="")
         label_widget.image = None
@@ -82,7 +82,7 @@ def update_image_preview(label_widget, img_source):
     label_widget.config(text="⌛ Carregando...", image="")
 
     def _loader():
-        photo, err = fetch_and_resize_image(img_source)
+        photo, err = fetch_and_resize_image(img_source, max_size=max_size)
 
         def _apply():
             try:
@@ -103,6 +103,62 @@ def update_image_preview(label_widget, img_source):
             pass
 
     threading.Thread(target=_loader, daemon=True).start()
+
+
+def update_multi_image_gallery(gallery_frame, image_list, max_size=(130, 85)):
+    """Limpa e recria os contêineres de pré-visualização para cada uma das N imagens da lista."""
+    for child in gallery_frame.winfo_children():
+        child.destroy()
+
+    if not image_list:
+        lbl_empty = tk.Label(
+            gallery_frame,
+            text="🖼️ Nenhuma imagem na galeria",
+            bg=CARD_BG,
+            fg="#778ca3",
+            font=("Segoe UI", 8),
+            relief="solid",
+            bd=1,
+            padx=8,
+            pady=4,
+        )
+        lbl_empty.pack(side=tk.LEFT, padx=2, pady=2)
+        return
+
+    for idx, img_src in enumerate(image_list):
+        if not img_src:
+            continue
+        card = tk.Frame(
+            gallery_frame,
+            bg=CARD_BG,
+            highlightbackground=BORDER_COLOR,
+            highlightthickness=1,
+            padx=4,
+            pady=4,
+        )
+        card.pack(side=tk.LEFT, padx=4, pady=2)
+
+        lbl_title = tk.Label(
+            card,
+            text=f"Img {idx + 1}",
+            font=("Segoe UI", 8, "bold"),
+            fg="#4b6584",
+            bg=CARD_BG,
+        )
+        lbl_title.pack(anchor="w")
+
+        lbl_img = tk.Label(
+            card,
+            text="⌛ Carregando...",
+            bg=CARD_BG,
+            fg="#778ca3",
+            font=("Segoe UI", 8),
+            width=16,
+            height=5,
+        )
+        lbl_img.pack()
+
+        update_image_preview(lbl_img, img_src, max_size=max_size)
 
 # Chaves conhecidas que armazenam listas de dicionários (Objetos complexos)
 LISTS_OF_DICTS = {"socials", "cta", "stats", "links", "education", "experiences", "certificates", "skills", "projects"}
@@ -398,26 +454,36 @@ class PortfolioCRUDApp:
                 if key in LISTS_OF_DICTS:
                     self.render_nested_dicts(row, key, value, refresh_callback)
                 else:
-                    tk.Label(row, text="(Um item\npor linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
-                    txt = tk.Text(row, height=4, width=45, font=("Segoe UI", 10), relief="flat", 
-                                  highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
-                    txt.insert(tk.END, "\n".join(value))
-                    txt.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
-
                     if is_image_field(key, value):
-                        pbox = tk.Label(row, text="🖼️ Imagem", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=6, pady=6)
-                        pbox.pack(side=tk.RIGHT, padx=(10, 0))
-                        
-                        def update_string_list_with_preview(event, k=key, w=txt, d=data_dict, preview=pbox):
+                        gallery_container = tk.Frame(row, bg=BG_COLOR)
+                        gallery_container.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+
+                        txt_frame = tk.Frame(gallery_container, bg=BG_COLOR)
+                        txt_frame.pack(fill=tk.X, expand=True)
+
+                        tk.Label(txt_frame, text="(Uma imagem por linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
+                        txt = tk.Text(txt_frame, height=4, width=50, font=("Segoe UI", 10), relief="flat", 
+                                      highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
+                        txt.insert(tk.END, "\n".join(value) if isinstance(value, list) else "")
+                        txt.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+                        gallery_frame = tk.Frame(gallery_container, bg=BG_COLOR)
+                        gallery_frame.pack(fill=tk.X, expand=True, pady=(5, 0))
+
+                        def update_string_list_with_gallery(event, k=key, w=txt, d=data_dict, gframe=gallery_frame):
                             lines = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
                             d[k] = lines
-                            first_img = lines[0] if lines else ""
-                            update_image_preview(preview, first_img)
+                            update_multi_image_gallery(gframe, lines)
 
-                        txt.bind("<KeyRelease>", update_string_list_with_preview)
-                        if value:
-                            update_image_preview(pbox, value[0])
+                        txt.bind("<KeyRelease>", update_string_list_with_gallery)
+                        update_multi_image_gallery(gallery_frame, value if isinstance(value, list) else [])
                     else:
+                        tk.Label(row, text="(Um item\npor linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
+                        txt = tk.Text(row, height=4, width=50, font=("Segoe UI", 10), relief="flat", 
+                                      highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
+                        txt.insert(tk.END, "\n".join(value))
+                        txt.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+
                         def update_string_list(event, k=key, w=txt, d=data_dict):
                             lines = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
                             d[k] = lines
