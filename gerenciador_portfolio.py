@@ -81,8 +81,10 @@ def load_pil_image(img_source: str, max_size=(200, 130)):
 
 
 def update_image_preview(label_widget, img_source, max_size=(200, 130)):
+    if not label_widget or not label_widget.winfo_exists():
+        return
     if not img_source or not str(img_source).strip():
-        label_widget.config(text="🖼️ Sem imagem", image="", width="", height="")
+        label_widget.config(text="🖼️ Sem imagem", image="", width=0, height=0)
         label_widget.image = None
         return
 
@@ -91,7 +93,7 @@ def update_image_preview(label_widget, img_source, max_size=(200, 130)):
 
     if cache_key in PHOTO_CACHE:
         photo = PHOTO_CACHE[cache_key]
-        label_widget.config(image=photo, text="", width="", height="")
+        label_widget.config(image=photo, text="", width=0, height=0)
         label_widget.image = photo
         return
 
@@ -102,24 +104,27 @@ def update_image_preview(label_widget, img_source, max_size=(200, 130)):
 
         def _apply():
             try:
+                if not label_widget.winfo_exists():
+                    return
                 if pil_img and ImageTk:
                     if cache_key not in PHOTO_CACHE:
                         PHOTO_CACHE[cache_key] = ImageTk.PhotoImage(pil_img)
                     photo = PHOTO_CACHE[cache_key]
-                    label_widget.config(image=photo, text="", width="", height="")
+                    label_widget.config(image=photo, text="", width=0, height=0)
                     label_widget.image = photo
                 else:
                     err_msg = str(err)
                     short_err = err_msg[:25] + "..." if len(err_msg) > 25 else err_msg
-                    label_widget.config(text=f"🖼️ [{short_err}]", image="", width="", height="")
+                    label_widget.config(text=f"🖼️ [{short_err}]", image="", width=0, height=0)
                     label_widget.image = None
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"[ERRO_IMAGE_PREVIEW] {e}")
 
         try:
-            label_widget.after(0, _apply)
-        except Exception:
-            pass
+            if label_widget.winfo_exists():
+                label_widget.after(0, _apply)
+        except Exception as e:
+            print(f"[ERRO_IMAGE_PREVIEW] {e}")
 
     threading.Thread(target=_loader, daemon=True).start()
 
