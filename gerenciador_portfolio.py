@@ -5,7 +5,7 @@ from pathlib import Path
 import shutil
 import threading
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 import urllib.request
 
 try:
@@ -27,6 +27,41 @@ except ImportError:
 IMAGE_CACHE = {}
 IMAGE_KEYS = {"icon", "thumbnail", "image", "images", "photo", "avatar", "profilephoto", "logo"}
 IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg")
+TARGET_IMAGE_DIR = Path.cwd() / "assets" / "imagens" / "ThumbProjetos"
+
+
+def import_image_files(multiple=False):
+    """
+    Abre o diálogo nativo do SO para escolher arquivo(s) de imagem,
+    copia automaticamente para assets/imagens/ThumbProjetos/
+    e retorna lista de caminhos relativos no formato ./assets/imagens/ThumbProjetos/nome.ext
+    """
+    TARGET_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+    filetypes = [
+        ("Imagens", "*.png *.jpg *.jpeg *.webp *.gif *.svg"),
+        ("Todos os arquivos", "*.*")
+    ]
+    if multiple:
+        files = filedialog.askopenfilenames(title="Selecionar Imagens para o Projeto", filetypes=filetypes)
+        if not files: return []
+        selected_files = files
+    else:
+        file = filedialog.askopenfilename(title="Selecionar Imagem para o Projeto", filetypes=filetypes)
+        if not file: return []
+        selected_files = [file]
+
+    rel_paths = []
+    for src in selected_files:
+        src_path = Path(src)
+        if not src_path.exists(): continue
+        dst_path = TARGET_IMAGE_DIR / src_path.name
+        try:
+            shutil.copy2(src_path, dst_path)
+            rel_path = f"./assets/imagens/ThumbProjetos/{src_path.name}"
+            rel_paths.append(rel_path)
+        except Exception as e:
+            messagebox.showerror("Erro ao Copiar Imagem", f"Não foi possível copiar '{src_path.name}':\n{e}")
+    return rel_paths
 
 
 def is_image_field(key_name, val=None):
@@ -486,7 +521,26 @@ class PortfolioCRUDApp:
                         txt_frame.pack(fill=tk.X, expand=True)
 
                         tk.Label(txt_frame, text="(Uma imagem por linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
-                        txt = tk.Text(txt_frame, height=4, width=50, font=("Segoe UI", 10), relief="flat", 
+                        
+                        def upload_multi_images():
+                            new_paths = import_image_files(multiple=True)
+                            if new_paths:
+                                cur = [l.strip() for l in txt.get("1.0", tk.END).split('\n') if l.strip()]
+                                for p in new_paths:
+                                    if p not in cur:
+                                        cur.append(p)
+                                txt.delete("1.0", tk.END)
+                                txt.insert(tk.END, "\n".join(cur))
+                                data_dict[key] = cur
+                                update_multi_image_gallery(gallery_frame, cur)
+
+                        btn_upload_multi = tk.Button(txt_frame, text="📁 Importar do PC...", bg="#34495e", fg="white",
+                                                     font=("Segoe UI", 8, "bold"), relief="flat", cursor="hand2",
+                                                     activebackground="#2c3e50", activeforeground="white", padx=8, pady=3,
+                                                     command=upload_multi_images)
+                        btn_upload_multi.pack(side=tk.RIGHT, padx=(5, 0))
+
+                        txt = tk.Text(txt_frame, height=4, width=45, font=("Segoe UI", 10), relief="flat", 
                                       highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
                         txt.insert(tk.END, "\n".join(value) if isinstance(value, list) else "")
                         txt.pack(side=tk.LEFT, fill=tk.X, expand=True)
@@ -554,6 +608,17 @@ class PortfolioCRUDApp:
                         pbox = tk.Label(row, text="🖼️ Imagem", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=6, pady=6)
                         pbox.pack(side=tk.RIGHT, padx=(10, 0))
 
+                        def upload_single_image(*args, vref=var):
+                            new_paths = import_image_files(multiple=False)
+                            if new_paths:
+                                vref.set(new_paths[0])
+
+                        btn_upload_single = tk.Button(row, text="📁 Importar...", bg="#34495e", fg="white",
+                                                      font=("Segoe UI", 8, "bold"), relief="flat", cursor="hand2",
+                                                      activebackground="#2c3e50", activeforeground="white", padx=8, pady=3,
+                                                      command=upload_single_image)
+                        btn_upload_single.pack(side=tk.RIGHT, padx=(5, 0))
+
                         def update_entry_preview(*args, v=var, preview=pbox):
                             update_image_preview(preview, v.get())
 
@@ -590,6 +655,17 @@ class PortfolioCRUDApp:
                 if is_image_field(k, str(v)):
                     pbox = tk.Label(row, text="🖼️", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=4, pady=4)
                     pbox.pack(side=tk.RIGHT, padx=(5, 0))
+
+                    def upload_nested_image(*args, vref=var):
+                        new_paths = import_image_files(multiple=False)
+                        if new_paths:
+                            vref.set(new_paths[0])
+
+                    btn_upload_nested = tk.Button(row, text="📁", bg="#34495e", fg="white", font=("Segoe UI", 8, "bold"),
+                                                  relief="flat", cursor="hand2", activebackground="#2c3e50", activeforeground="white",
+                                                  padx=4, pady=2, command=upload_nested_image)
+                    btn_upload_nested.pack(side=tk.RIGHT, padx=(3, 0))
+
                     def update_nested_preview(*args, vref=var, preview=pbox):
                         update_image_preview(preview, vref.get())
                     var.trace_add("write", update_nested_preview)
