@@ -39,10 +39,22 @@
       }
     ],
     "stats": [
-      { "value": "12+", "label": "Tecnologias" },
-      { "value": "10+", "label": "Projetos" },
-      { "value": "20+", "label": "Certificados" },
-      { "value": "2", "label": "Experiências profissionais" }
+      {
+        "value": "12+",
+        "label": "Tecnologias"
+      },
+      {
+        "value": "18+",
+        "label": "Projetos"
+      },
+      {
+        "value": "20+",
+        "label": "Certificados"
+      },
+      {
+        "value": "2",
+        "label": "Experiências profissionais"
+      }
     ],
     "footerText": "© 2026 Daniel Dias Pereira. Todos os direitos reservados."
   },
@@ -60,7 +72,7 @@
     ]
   },
   "education": [
-        {
+    {
       "institution": "PIC - Programa de Iniciação Científica Jr. (OBMEP)",
       "degree": "Programa de Iniciação Científica em Matemática",
       "period": "fev de 2022 - dez de 2022",
@@ -91,7 +103,13 @@
         "Desenvolvimento de integrações com CRM e APIs de sistemas para automações com IA",
         "Apoio na evolução de processos internos orientados por dados"
       ],
-      "technologies": ["Prompt Engineering", "n8n", "LLMs", "APIs", "Automação"]
+      "technologies": [
+        "Prompt Engineering",
+        "n8n",
+        "LLMs",
+        "APIs",
+        "Automação"
+      ]
     },
     {
       "title": "Estagiário em Automação de Dados",
@@ -107,7 +125,15 @@
         "Desenvolvimento de automações inteligentes voltadas e melhorias de processos internos de diferentes áreas da empresa",
         "Desenvolvimento de soluções personalizadas a clientes, conectando sistemas e desenvolvendo soluções"
       ],
-      "technologies": ["Python", "n8n", "LLMs", "Ollama", "SQL", "Docker", "Automação"]
+      "technologies": [
+        "Python",
+        "n8n",
+        "LLMs",
+        "Ollama",
+        "SQL",
+        "Docker",
+        "Automação"
+      ]
     }
   ],
   "certificates": [
@@ -286,7 +312,14 @@
         "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
         "./assets/imagens/ThumbProjetos/API1Semestre.png"
       ],
-      "technologies": ["Python", "Flask", "HTML", "CSS", "JavaScript", "Scrum"],
+      "technologies": [
+        "Python",
+        "Flask",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Scrum"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -306,7 +339,11 @@
         "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
         "./assets/imagens/ThumbProjetos/ProjetoDatas.png"
       ],
-      "technologies": ["JavaScript", "HTML", "CSS"],
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -330,7 +367,12 @@
         "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
         "./assets/imagens/ThumbProjetos/ProjetoBTG.png"
       ],
-      "technologies": ["HTML", "CSS", "JavaScript", "Scrum"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Scrum"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -354,7 +396,11 @@
         "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
         "./assets/imagens/ThumbProjetos/PortfólioPrint.png"
       ],
-      "technologies": ["HTML", "CSS", "JavaScript"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -378,7 +424,11 @@
         "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
         "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true"
       ],
-      "technologies": ["Python", "Algoritmos", "Backtracking"],
+      "technologies": [
+        "Python",
+        "Algoritmos",
+        "Backtracking"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -398,7 +448,12 @@
         "./assets/imagens/ThumbProjetos/QrCodeJS.png",
         "./assets/imagens/ThumbProjetos/QrCodeJS.png"
       ],
-      "technologies": ["JavaScript", "HTML", "CSS", "qrcode.js"],
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "qrcode.js"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -426,7 +481,15 @@
         "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
         "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true"
       ],
-      "technologies": ["Python", "Flask", "SpaCy", "PyMuPDF", "BeautifulSoup", "JavaScript", "Chart.js"],
+      "technologies": [
+        "Python",
+        "Flask",
+        "SpaCy",
+        "PyMuPDF",
+        "BeautifulSoup",
+        "JavaScript",
+        "Chart.js"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -450,7 +513,12 @@
         "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
         "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png"
       ],
-      "technologies": ["n8n", "JSON", "Automação", "IA"],
+      "technologies": [
+        "n8n",
+        "JSON",
+        "Automação",
+        "IA"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -474,7 +542,13 @@
         "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
         "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
       ],
-      "technologies": ["Python", "ETL", "API Banco Central", "Pandas", "Data Visualization"],
+      "technologies": [
+        "Python",
+        "ETL",
+        "API Banco Central",
+        "Pandas",
+        "Data Visualization"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -498,7 +572,12 @@
         "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
         "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png"
       ],
-      "technologies": ["JavaScript", "Dashboard", "API", "Visualização de dados"],
+      "technologies": [
+        "JavaScript",
+        "Dashboard",
+        "API",
+        "Visualização de dados"
+      ],
       "links": [
         {
           "label": "Repositório",
@@ -511,6 +590,210 @@
         {
           "label": "Post LinkedIn",
           "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_dataanalytics-dashboard-webdevelopment-activity-7427096690605649920-bj0s?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+        }
+      ]
+    },
+    {
+      "title": "ipynbCleaner (PyPI Package)",
+      "description": "Ferramenta e pacote Python publicado no PyPI para limpeza e otimização de arquivos Jupyter Notebook (.ipynb) para compartilhamento eficiente com LLMs.",
+      "longDescription": "Biblioteca Python desenvolvida e publicada no PyPI (ipynbcleaner) que otimiza arquivos Jupyter Notebook (.ipynb) removendo metadados e saídas volumosas, preservando a estrutura de código e documentação para integração econômica com modelos de linguagem e agentes de IA.",
+      "category": "Ferramenta & Biblioteca",
+      "year": "2026",
+      "status": "Publicado no PyPI",
+      "thumbnail": "https://raw.githubusercontent.com/DanielDPereira/ipynbCleaner/main/docs/assets/banner.png",
+      "images": [
+        "https://raw.githubusercontent.com/DanielDPereira/ipynbCleaner/main/docs/assets/banner.png"
+      ],
+      "technologies": [
+        "Python",
+        "PyPI",
+        "Jupyter",
+        "LLMs",
+        "CLI"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/ipynbCleaner"
+        },
+        {
+          "label": "PyPI Package",
+          "url": "https://pypi.org/project/ipynbcleaner/"
+        }
+      ]
+    },
+    {
+      "title": "Brasil na Copa AI (RAG Chatbot)",
+      "description": "Chatbot com IA e RAG (Retrieval-Augmented Generation) para responder sobre o histórico e estatísticas da seleção brasileira em Copas do Mundo.",
+      "longDescription": "Aplicação desenvolvida em Python que utiliza a arquitetura RAG (Retrieval-Augmented Generation) com LangChain e a API do Google Gemini para realizar consultas semânticas e estatísticas sobre a trajetória da Seleção Brasileira de Futebol em Copas do Mundo.",
+      "category": "IA e NLP",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "https://raw.githubusercontent.com/DanielDPereira/BrasilnaCopaAI/main/assets/thumb.png",
+      "images": [
+        "https://raw.githubusercontent.com/DanielDPereira/BrasilnaCopaAI/main/assets/thumb.png"
+      ],
+      "technologies": [
+        "Python",
+        "LangChain",
+        "RAG",
+        "Gemini API",
+        "LLMs"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/BrasilnaCopaAI"
+        }
+      ]
+    },
+    {
+      "title": "FII Monitor (Gestão de FIIs)",
+      "description": "Gerenciador de carteiras de Fundos de Investimento Imobiliário (FIIs) com análise de dividendos, cotações e métricas da B3 via yfinance.",
+      "longDescription": "Aplicação em Python direcionada ao mercado financeiro para acompanhamento e gestão de carteiras de FIIs negociados na B3. Coleta cotações em tempo real via yfinance, calcula indicadores de rentabilidade e projeta rendimentos com dashboards visuais.",
+      "category": "Finanças e Dados",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
+      ],
+      "technologies": [
+        "Python",
+        "yfinance",
+        "B3",
+        "Pandas",
+        "Financial Analysis"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/FII-Monitor"
+        }
+      ]
+    },
+    {
+      "title": "Gerenciador de Usuários JavaFX & MySQL",
+      "description": "Sistema desktop em Java com JavaFX e MySQL para administração de usuários, aplicando POO, padrão DAO e criptografia BCrypt.",
+      "longDescription": "Aplicação desktop robusta desenvolvida em Java como estudo de Programação Orientada a Objetos (POO). Implementa padrão CRUD completo, arquitetura em camadas (DAO), interface gráfica moderna em JavaFX e armazenamento seguro de credenciais com BCrypt e banco MySQL.",
+      "category": "Projeto Acadêmico",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/API1Semestre.png"
+      ],
+      "technologies": [
+        "Java",
+        "JavaFX",
+        "MySQL",
+        "POO",
+        "BCrypt"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/CRUD-users-JavaFX"
+        }
+      ]
+    },
+    {
+      "title": "Balancify (Estruturador Patrimonial)",
+      "description": "Plataforma em Python para estruturação e análise de balanço patrimonial com relatórios dinâmicos e indicadores econômicos.",
+      "longDescription": "Sistema de gestão financeira pessoal e empresarial que automatiza a organização de ativos, passivos e patrimônio líquido. Apresenta cálculo dinâmico de liquidez, estrutura de capital e indicadores financeiros amigáveis.",
+      "category": "Finanças e Dados",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
+      ],
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Financial Analysis",
+        "Data Analytics"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/Balancify"
+        }
+      ]
+    },
+    {
+      "title": "PDF OCR Reader",
+      "description": "Sistema de extração e reconhecimento óptico de caracteres (OCR) em arquivos PDF digitalizados utilizando Tesseract e Python.",
+      "longDescription": "Pipeline de engenharia de dados em Python voltado para OCR (Optical Character Recognition). Processa documentos digitalizados em PDF, aplica algoritmos de tratamento de imagem e extrai textos não estruturados utilizando Tesseract OCR.",
+      "category": "Engenharia de Dados",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "./assets/imagens/ThumbProjetos/PalavrometrIA.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/PalavrometrIA.png"
+      ],
+      "technologies": [
+        "Python",
+        "Tesseract OCR",
+        "OpenCV",
+        "PDF Processing"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/pdf_ocr_reader"
+        }
+      ]
+    },
+    {
+      "title": "Aerocode — Gestão de Aeronaves",
+      "description": "Sistema em linha de comando (CLI) em TypeScript para controle de produção de aeronaves, com princípios avançados de POO.",
+      "longDescription": "Aplicação desenvolvida em TypeScript para gerenciamento de processos e peças na produção aeronáutica (Aerocode). Projeto acadêmico de POO da Fatec SJC aplicando conceitos de encapsulamento, herança, polimorfismo e design patterns.",
+      "category": "Projeto Acadêmico",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
+      "images": [
+        "./assets/imagens/ThumbProjetos/API1Semestre.png"
+      ],
+      "technologies": [
+        "TypeScript",
+        "POO",
+        "Node.js",
+        "CLI"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/AV1"
+        }
+      ]
+    },
+    {
+      "title": "XGBoost ParamTuner (Previsões TAF)",
+      "description": "Dashboard interativo para ajuste e análise de hiperparâmetros de modelos XGBoost em dados meteorológicos TAF.",
+      "longDescription": "Aplicação web focada em Data Science e Meteorologia. Permite ajustar e visualizar o desempenho de hiperparâmetros do algoritmo XGBoost aplicados a previsões meteorológicas TAF com gráficos e painéis de avaliação.",
+      "category": "Dashboard & Data Science",
+      "year": "2026",
+      "status": "Concluído",
+      "thumbnail": "https://raw.githubusercontent.com/DanielDPereira/xgboost-paramTuner-projTAF/main/assets/preview.png",
+      "images": [
+        "https://raw.githubusercontent.com/DanielDPereira/xgboost-paramTuner-projTAF/main/assets/preview.png"
+      ],
+      "technologies": [
+        "JavaScript",
+        "XGBoost",
+        "Data Visualization",
+        "Meteorologia"
+      ],
+      "links": [
+        {
+          "label": "Repositório",
+          "url": "https://github.com/DanielDPereira/xgboost-paramTuner-projTAF"
+        },
+        {
+          "label": "Demonstração",
+          "url": "https://danieldpereira.github.io/xgboost-paramTuner-projTAF/"
         }
       ]
     }
