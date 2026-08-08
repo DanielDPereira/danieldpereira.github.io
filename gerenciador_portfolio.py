@@ -40,7 +40,7 @@ def is_image_field(key_name, val=None):
     return False
 
 
-def fetch_and_resize_image(img_source: str, max_size=(160, 100)):
+def fetch_and_resize_image(img_source: str, max_size=(200, 130)):
     if not Image or not ImageTk:
         return None, "PIL indisponível"
     if not img_source or not isinstance(img_source, str):
@@ -54,7 +54,7 @@ def fetch_and_resize_image(img_source: str, max_size=(160, 100)):
     try:
         if img_source.startswith("http://") or img_source.startswith("https://"):
             req = urllib.request.Request(img_source, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=4) as resp:
+            with urllib.request.urlopen(req, timeout=5) as resp:
                 data = resp.read()
             raw_img = Image.open(io.BytesIO(data))
         else:
@@ -65,17 +65,21 @@ def fetch_and_resize_image(img_source: str, max_size=(160, 100)):
                 return None, f"Não encontrado: {img_source}"
             raw_img = Image.open(local_path)
 
-        raw_img.thumbnail(max_size, Image.Resampling.LANCZOS)
-        photo = ImageTk.PhotoImage(raw_img)
+        if raw_img.mode in ("P", "1"):
+            raw_img = raw_img.convert("RGBA")
+
+        img_copy = raw_img.copy()
+        img_copy.thumbnail(max_size, Image.Resampling.LANCZOS)
+        photo = ImageTk.PhotoImage(img_copy)
         IMAGE_CACHE[cache_key] = photo
         return photo, None
     except Exception as e:
         return None, str(e)
 
 
-def update_image_preview(label_widget, img_source, max_size=(160, 100)):
+def update_image_preview(label_widget, img_source, max_size=(200, 130)):
     if not img_source or not str(img_source).strip():
-        label_widget.config(text="🖼️ Sem imagem", image="")
+        label_widget.config(text="🖼️ Sem imagem", image="", width="", height="")
         label_widget.image = None
         return
 
@@ -87,12 +91,12 @@ def update_image_preview(label_widget, img_source, max_size=(160, 100)):
         def _apply():
             try:
                 if photo:
-                    label_widget.config(image=photo, text="")
+                    label_widget.config(image=photo, text="", width="", height="")
                     label_widget.image = photo
                 else:
                     err_msg = str(err)
                     short_err = err_msg[:25] + "..." if len(err_msg) > 25 else err_msg
-                    label_widget.config(text=f"🖼️ [{short_err}]", image="")
+                    label_widget.config(text=f"🖼️ [{short_err}]", image="", width="", height="")
                     label_widget.image = None
             except Exception:
                 pass
@@ -105,7 +109,7 @@ def update_image_preview(label_widget, img_source, max_size=(160, 100)):
     threading.Thread(target=_loader, daemon=True).start()
 
 
-def update_multi_image_gallery(gallery_frame, image_list, max_size=(130, 85)):
+def update_multi_image_gallery(gallery_frame, image_list, max_size=(180, 115)):
     """Limpa e recria os contêineres de pré-visualização para cada uma das N imagens da lista."""
     for child in gallery_frame.winfo_children():
         child.destroy()
@@ -140,12 +144,12 @@ def update_multi_image_gallery(gallery_frame, image_list, max_size=(130, 85)):
 
         lbl_title = tk.Label(
             card,
-            text=f"Img {idx + 1}",
+            text=f"Imagem {idx + 1}",
             font=("Segoe UI", 8, "bold"),
             fg="#4b6584",
             bg=CARD_BG,
         )
-        lbl_title.pack(anchor="w")
+        lbl_title.pack(anchor="w", pady=(0, 2))
 
         lbl_img = tk.Label(
             card,
@@ -153,8 +157,8 @@ def update_multi_image_gallery(gallery_frame, image_list, max_size=(130, 85)):
             bg=CARD_BG,
             fg="#778ca3",
             font=("Segoe UI", 8),
-            width=16,
-            height=5,
+            padx=2,
+            pady=2,
         )
         lbl_img.pack()
 
