@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+portfolio-data.json.backup
+
+# OS
+.DS_Store
+Thumbs.db
