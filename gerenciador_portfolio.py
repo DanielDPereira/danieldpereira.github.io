@@ -521,24 +521,6 @@ class PortfolioCRUDApp:
                         txt_frame.pack(fill=tk.X, expand=True)
 
                         tk.Label(txt_frame, text="(Uma imagem por linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
-                        
-                        def upload_multi_images():
-                            new_paths = import_image_files(multiple=True)
-                            if new_paths:
-                                cur = [l.strip() for l in txt.get("1.0", tk.END).split('\n') if l.strip()]
-                                for p in new_paths:
-                                    if p not in cur:
-                                        cur.append(p)
-                                txt.delete("1.0", tk.END)
-                                txt.insert(tk.END, "\n".join(cur))
-                                data_dict[key] = cur
-                                update_multi_image_gallery(gallery_frame, cur)
-
-                        btn_upload_multi = tk.Button(txt_frame, text="📁 Importar do PC...", bg="#34495e", fg="white",
-                                                     font=("Segoe UI", 8, "bold"), relief="flat", cursor="hand2",
-                                                     activebackground="#2c3e50", activeforeground="white", padx=8, pady=3,
-                                                     command=upload_multi_images)
-                        btn_upload_multi.pack(side=tk.RIGHT, padx=(5, 0))
 
                         txt = tk.Text(txt_frame, height=4, width=45, font=("Segoe UI", 10), relief="flat", 
                                       highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
@@ -547,6 +529,24 @@ class PortfolioCRUDApp:
 
                         gallery_frame = tk.Frame(gallery_container, bg=BG_COLOR)
                         gallery_frame.pack(fill=tk.X, expand=True, pady=(5, 0))
+
+                        def upload_multi_images(k=key, w=txt, d=data_dict, gframe=gallery_frame):
+                            new_paths = import_image_files(multiple=True)
+                            if new_paths:
+                                cur = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
+                                for p in new_paths:
+                                    if p not in cur:
+                                        cur.append(p)
+                                w.delete("1.0", tk.END)
+                                w.insert(tk.END, "\n".join(cur))
+                                d[k] = cur
+                                update_multi_image_gallery(gframe, cur)
+
+                        btn_upload_multi = tk.Button(txt_frame, text="📁 Importar do PC...", bg="#34495e", fg="white",
+                                                     font=("Segoe UI", 8, "bold"), relief="flat", cursor="hand2",
+                                                     activebackground="#2c3e50", activeforeground="white", padx=8, pady=3,
+                                                     command=upload_multi_images)
+                        btn_upload_multi.pack(side=tk.RIGHT, padx=(5, 0))
 
                         def update_string_list_with_gallery(event, k=key, w=txt, d=data_dict, gframe=gallery_frame):
                             lines = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
@@ -608,10 +608,11 @@ class PortfolioCRUDApp:
                         pbox = tk.Label(row, text="🖼️ Imagem", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=6, pady=6)
                         pbox.pack(side=tk.RIGHT, padx=(10, 0))
 
-                        def upload_single_image(*args, vref=var):
+                        def upload_single_image(*args, k=key, vref=var, d=data_dict):
                             new_paths = import_image_files(multiple=False)
                             if new_paths:
                                 vref.set(new_paths[0])
+                                d[k] = new_paths[0]
 
                         btn_upload_single = tk.Button(row, text="📁 Importar...", bg="#34495e", fg="white",
                                                       font=("Segoe UI", 8, "bold"), relief="flat", cursor="hand2",
@@ -656,10 +657,11 @@ class PortfolioCRUDApp:
                     pbox = tk.Label(row, text="🖼️", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=4, pady=4)
                     pbox.pack(side=tk.RIGHT, padx=(5, 0))
 
-                    def upload_nested_image(*args, vref=var):
+                    def upload_nested_image(*args, kref=k, vref=var, itemref=item_dict):
                         new_paths = import_image_files(multiple=False)
                         if new_paths:
                             vref.set(new_paths[0])
+                            itemref[kref] = new_paths[0]
 
                     btn_upload_nested = tk.Button(row, text="📁", bg="#34495e", fg="white", font=("Segoe UI", 8, "bold"),
                                                   relief="flat", cursor="hand2", activebackground="#2c3e50", activeforeground="white",
