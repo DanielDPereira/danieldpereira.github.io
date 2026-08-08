@@ -1,8 +1,18 @@
+import io
 import json
+import os
+from pathlib import Path
+import shutil
+import threading
 import tkinter as tk
 from tkinter import ttk, messagebox
-import os
-import shutil
+import urllib.request
+
+try:
+    from PIL import Image, ImageTk
+except ImportError:
+    Image = None
+    ImageTk = None
 
 try:
     from validator import validate_portfolio_data
@@ -13,6 +23,86 @@ try:
     from build import run_build
 except ImportError:
     run_build = None
+
+IMAGE_CACHE = {}
+IMAGE_KEYS = {"icon", "thumbnail", "image", "images", "photo", "avatar", "profilephoto", "logo"}
+IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg")
+
+
+def is_image_field(key_name, val=None):
+    key_name_lower = str(key_name).lower()
+    if any(k in key_name_lower for k in IMAGE_KEYS):
+        return True
+    if isinstance(val, str):
+        val_lower = val.lower().split("?")[0]
+        if any(val_lower.endswith(ext) for ext in IMAGE_EXTENSIONS):
+            return True
+    return False
+
+
+def fetch_and_resize_image(img_source: str, max_size=(160, 100)):
+    if not Image or not ImageTk:
+        return None, "PIL indisponível"
+    if not img_source or not isinstance(img_source, str):
+        return None, "Caminho inválido"
+
+    img_source = img_source.strip()
+    cache_key = (img_source, max_size)
+    if cache_key in IMAGE_CACHE:
+        return IMAGE_CACHE[cache_key], None
+
+    try:
+        if img_source.startswith("http://") or img_source.startswith("https://"):
+            req = urllib.request.Request(img_source, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=4) as resp:
+                data = resp.read()
+            raw_img = Image.open(io.BytesIO(data))
+        else:
+            local_path = Path(img_source)
+            if not local_path.exists():
+                local_path = Path.cwd() / img_source.lstrip("./")
+            if not local_path.exists():
+                return None, f"Não encontrado: {img_source}"
+            raw_img = Image.open(local_path)
+
+        raw_img.thumbnail(max_size, Image.Resampling.LANCZOS)
+        photo = ImageTk.PhotoImage(raw_img)
+        IMAGE_CACHE[cache_key] = photo
+        return photo, None
+    except Exception as e:
+        return None, str(e)
+
+
+def update_image_preview(label_widget, img_source):
+    if not img_source or not str(img_source).strip():
+        label_widget.config(text="🖼️ Sem imagem", image="")
+        label_widget.image = None
+        return
+
+    label_widget.config(text="⌛ Carregando...", image="")
+
+    def _loader():
+        photo, err = fetch_and_resize_image(img_source)
+
+        def _apply():
+            try:
+                if photo:
+                    label_widget.config(image=photo, text="")
+                    label_widget.image = photo
+                else:
+                    err_msg = str(err)
+                    short_err = err_msg[:25] + "..." if len(err_msg) > 25 else err_msg
+                    label_widget.config(text=f"🖼️ [{short_err}]", image="")
+                    label_widget.image = None
+            except Exception:
+                pass
+
+        try:
+            label_widget.after(0, _apply)
+        except Exception:
+            pass
+
+    threading.Thread(target=_loader, daemon=True).start()
 
 # Chaves conhecidas que armazenam listas de dicionários (Objetos complexos)
 LISTS_OF_DICTS = {"socials", "cta", "stats", "links", "education", "experiences", "certificates", "skills", "projects"}
@@ -309,19 +399,32 @@ class PortfolioCRUDApp:
                     self.render_nested_dicts(row, key, value, refresh_callback)
                 else:
                     tk.Label(row, text="(Um item\npor linha)", font=("Segoe UI", 8), fg="#778ca3", bg=BG_COLOR).pack(side=tk.LEFT, padx=(0,5))
-                    txt = tk.Text(row, height=4, width=50, font=("Segoe UI", 10), relief="flat", 
+                    txt = tk.Text(row, height=4, width=45, font=("Segoe UI", 10), relief="flat", 
                                   highlightthickness=1, highlightbackground=BORDER_COLOR, highlightcolor=FOCUS_COLOR)
                     txt.insert(tk.END, "\n".join(value))
                     txt.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
-                    
-                    def update_string_list(event, k=key, w=txt, d=data_dict):
-                        lines = w.get("1.0", tk.END).split('\n')
-                        d[k] = [line.strip() for line in lines if line.strip() != ""]
-                    txt.bind("<KeyRelease>", update_string_list)
+
+                    if is_image_field(key, value):
+                        pbox = tk.Label(row, text="🖼️ Imagem", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=6, pady=6)
+                        pbox.pack(side=tk.RIGHT, padx=(10, 0))
+                        
+                        def update_string_list_with_preview(event, k=key, w=txt, d=data_dict, preview=pbox):
+                            lines = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
+                            d[k] = lines
+                            first_img = lines[0] if lines else ""
+                            update_image_preview(preview, first_img)
+
+                        txt.bind("<KeyRelease>", update_string_list_with_preview)
+                        if value:
+                            update_image_preview(pbox, value[0])
+                    else:
+                        def update_string_list(event, k=key, w=txt, d=data_dict):
+                            lines = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
+                            d[k] = lines
+                        txt.bind("<KeyRelease>", update_string_list)
                     
             elif isinstance(value, bool):
                 var = tk.BooleanVar(value=value)
-                # O style de Checkbutton varia no ttk, usando tk puro com cor de fundo para consistência
                 chk = tk.Checkbutton(row, variable=var, bg=BG_COLOR, activebackground=BG_COLOR, cursor="hand2")
                 chk.pack(side=tk.LEFT, padx=5)
                 def update_bool(*args, k=key, v=var, d=data_dict):
@@ -357,16 +460,23 @@ class PortfolioCRUDApp:
                         d[k] = new_val
                     var.trace_add("write", update_ent)
 
+                    if is_image_field(key, val_str):
+                        pbox = tk.Label(row, text="🖼️ Imagem", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=6, pady=6)
+                        pbox.pack(side=tk.RIGHT, padx=(10, 0))
+
+                        def update_entry_preview(*args, v=var, preview=pbox):
+                            update_image_preview(preview, v.get())
+
+                        var.trace_add("write", update_entry_preview)
+                        update_image_preview(pbox, val_str)
+
     def render_nested_dicts(self, parent, key, list_data, refresh_callback):
-        # Substitui o LabelFrame datado por um Frame limpo estilo Card
         container = tk.Frame(parent, bg=BG_COLOR)
         container.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
         
-        # Título da sub-seção
         tk.Label(container, text=f"Gerenciar {key.title()}", bg=BG_COLOR, fg="#4b6584", font=("Segoe UI", 10, "bold")).pack(anchor="w", pady=(0,5))
         
         for i, item_dict in enumerate(list_data):
-            # Card Item
             item_frame = tk.Frame(container, bg=CARD_BG, highlightbackground=BORDER_COLOR, highlightthickness=1, pady=8, padx=8)
             item_frame.pack(fill=tk.X, pady=4)
             
@@ -386,6 +496,14 @@ class PortfolioCRUDApp:
                 def update_val(*args, item_ref=item_dict, key_ref=k, var_ref=var):
                     item_ref[key_ref] = var_ref.get()
                 var.trace_add("write", update_val)
+
+                if is_image_field(k, str(v)):
+                    pbox = tk.Label(row, text="🖼️", bg=CARD_BG, fg="#778ca3", font=("Segoe UI", 8), relief="solid", bd=1, padx=4, pady=4)
+                    pbox.pack(side=tk.RIGHT, padx=(5, 0))
+                    def update_nested_preview(*args, vref=var, preview=pbox):
+                        update_image_preview(preview, vref.get())
+                    var.trace_add("write", update_nested_preview)
+                    update_image_preview(pbox, str(v))
             
             actions_frame = tk.Frame(item_frame, bg=CARD_BG)
             actions_frame.pack(side=tk.RIGHT, padx=(5, 0))
