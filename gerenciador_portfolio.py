@@ -231,16 +231,55 @@ class PortfolioCRUDApp:
         refresh_listbox()
 
         # Botões da Listbox
-        btn_frame = tk.Frame(left_frame, bg=BG_COLOR)
-        btn_frame.pack(fill=tk.X)
+        btn_frame1 = tk.Frame(left_frame, bg=BG_COLOR)
+        btn_frame1.pack(fill=tk.X, pady=(0, 4))
         
-        tk.Button(btn_frame, text="➕ Novo", bg=FOCUS_COLOR, fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
+        tk.Button(btn_frame1, text="➕ Novo", bg=FOCUS_COLOR, fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
                   activebackground="#2980b9", activeforeground="white", pady=5,
-                  command=lambda: self.add_top_list_item(section_key, refresh_listbox)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+                  command=lambda: self.add_top_list_item(section_key, refresh_listbox)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 2))
         
-        tk.Button(btn_frame, text="🗑️ Excluir", bg="#eb3b5a", fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
+        tk.Button(btn_frame1, text="🗑️ Excluir", bg="#eb3b5a", fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
                   activebackground="#fc5c65", activeforeground="white", pady=5,
-                  command=lambda: self.delete_top_list_item(section_key, listbox, refresh_listbox, right_frame.inner_frame)).pack(side=tk.RIGHT, fill=tk.X, expand=True, padx=(5, 0))
+                  command=lambda: self.delete_top_list_item(section_key, listbox, refresh_listbox, right_frame.inner_frame)).pack(side=tk.RIGHT, fill=tk.X, expand=True, padx=(2, 0))
+
+        btn_frame2 = tk.Frame(left_frame, bg=BG_COLOR)
+        btn_frame2.pack(fill=tk.X)
+
+        tk.Button(btn_frame2, text="⬆️ Mover Cima", bg="#4b6584", fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 9, "bold"),
+                  activebackground="#5f27cd", activeforeground="white", pady=4,
+                  command=lambda: self.move_top_list_item_up(section_key, listbox, refresh_listbox)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 2))
+
+        tk.Button(btn_frame2, text="⬇️ Mover Baixo", bg="#4b6584", fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 9, "bold"),
+                  activebackground="#5f27cd", activeforeground="white", pady=4,
+                  command=lambda: self.move_top_list_item_down(section_key, listbox, refresh_listbox)).pack(side=tk.RIGHT, fill=tk.X, expand=True, padx=(2, 0))
+
+    def move_top_list_item_up(self, section_key, listbox, refresh_callback):
+        selection = listbox.curselection()
+        if not selection: return
+        idx = selection[0]
+        if idx <= 0: return
+        items = self.data[section_key]
+        items[idx], items[idx - 1] = items[idx - 1], items[idx]
+        self.current_selections[section_key] = idx - 1
+        refresh_callback()
+        listbox.selection_clear(0, tk.END)
+        listbox.selection_set(idx - 1)
+        listbox.see(idx - 1)
+        listbox.event_generate("<<ListboxSelect>>")
+
+    def move_top_list_item_down(self, section_key, listbox, refresh_callback):
+        selection = listbox.curselection()
+        if not selection: return
+        idx = selection[0]
+        items = self.data[section_key]
+        if idx >= len(items) - 1: return
+        items[idx], items[idx + 1] = items[idx + 1], items[idx]
+        self.current_selections[section_key] = idx + 1
+        refresh_callback()
+        listbox.selection_clear(0, tk.END)
+        listbox.selection_set(idx + 1)
+        listbox.see(idx + 1)
+        listbox.event_generate("<<ListboxSelect>>")
 
     def add_top_list_item(self, section_key, refresh_callback):
         template = TEMPLATES.get(section_key, {"title": "Novo Item"}).copy()
@@ -348,15 +387,34 @@ class PortfolioCRUDApp:
                     item_ref[key_ref] = var_ref.get()
                 var.trace_add("write", update_val)
             
-            btn_del = tk.Button(item_frame, text="✖", bg="#eb3b5a", fg="white", font=("Segoe UI", 8, "bold"),
+            actions_frame = tk.Frame(item_frame, bg=CARD_BG)
+            actions_frame.pack(side=tk.RIGHT, padx=(5, 0))
+
+            btn_up = tk.Button(actions_frame, text="▲", bg="#4b6584", fg="white", font=("Segoe UI", 8, "bold"),
+                               relief="flat", cursor="hand2", activebackground="#5f27cd", activeforeground="white",
+                               command=lambda idx=i: self.move_nested_item(list_data, idx, -1, refresh_callback))
+            btn_up.pack(side=tk.LEFT, padx=1)
+
+            btn_down = tk.Button(actions_frame, text="▼", bg="#4b6584", fg="white", font=("Segoe UI", 8, "bold"),
+                                 relief="flat", cursor="hand2", activebackground="#5f27cd", activeforeground="white",
+                                 command=lambda idx=i: self.move_nested_item(list_data, idx, 1, refresh_callback))
+            btn_down.pack(side=tk.LEFT, padx=1)
+
+            btn_del = tk.Button(actions_frame, text="✖", bg="#eb3b5a", fg="white", font=("Segoe UI", 8, "bold"),
                                 relief="flat", cursor="hand2", activebackground="#fc5c65", activeforeground="white",
                                 command=lambda idx=i: self.delete_nested_item(list_data, idx, refresh_callback))
-            btn_del.pack(side=tk.RIGHT, padx=(10, 0))
+            btn_del.pack(side=tk.LEFT, padx=1)
             
         btn_add = tk.Button(container, text=f"➕ Adicionar {key}", bg="#20bf6b", fg="white", relief="flat", cursor="hand2", 
                             font=("Segoe UI", 9, "bold"), activebackground="#26de81", activeforeground="white", pady=4,
                             command=lambda: self.add_nested_item(key, list_data, refresh_callback))
         btn_add.pack(anchor="w", pady=5)
+
+    def move_nested_item(self, list_data, idx, direction, refresh_callback):
+        new_idx = idx + direction
+        if 0 <= new_idx < len(list_data):
+            list_data[idx], list_data[new_idx] = list_data[new_idx], list_data[idx]
+            refresh_callback()
 
     def delete_nested_item(self, list_data, idx, refresh_callback):
         if messagebox.askyesno("Confirmar", "Remover este sub-item?"):
