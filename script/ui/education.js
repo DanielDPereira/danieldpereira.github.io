@@ -3,6 +3,7 @@ import { safeText } from '../utils/text.js';
 export function renderEducation(education) {
   const container = document.getElementById('education-list');
   if (!container || !Array.isArray(education)) return;
+  if (container.children.length > 0) return;
 
   container.innerHTML = education
     .map((item) => {
