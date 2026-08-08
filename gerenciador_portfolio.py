@@ -4,6 +4,16 @@ from tkinter import ttk, messagebox
 import os
 import shutil
 
+try:
+    from validator import validate_portfolio_data
+except ImportError:
+    validate_portfolio_data = None
+
+try:
+    from build import run_build
+except ImportError:
+    run_build = None
+
 # Chaves conhecidas que armazenam listas de dicionários (Objetos complexos)
 LISTS_OF_DICTS = {"socials", "cta", "stats", "links", "education", "experiences", "certificates", "skills", "projects"}
 
@@ -98,6 +108,15 @@ class PortfolioCRUDApp:
             self.data = {}
 
     def save_data(self):
+        if validate_portfolio_data:
+            errors = validate_portfolio_data(self.data)
+            if errors:
+                err_msg = "\n".join(errors[:5])
+                if len(errors) > 5:
+                    err_msg += f"\n...e mais {len(errors) - 5} erro(s)."
+                if not messagebox.askyesno("Aviso de Validação", f"O JSON possui inconsistências:\n\n{err_msg}\n\nDeseja salvar mesmo assim?"):
+                    return
+
         try:
             if os.path.exists(self.filepath):
                 shutil.copy(self.filepath, self.filepath + ".backup")
@@ -105,9 +124,31 @@ class PortfolioCRUDApp:
             with open(self.filepath, 'w', encoding='utf-8') as f:
                 json.dump(self.data, f, indent=4, ensure_ascii=False)
             
-            messagebox.showinfo("Sucesso", "Dados salvos com sucesso e backup criado!")
+            build_status = ""
+            if run_build:
+                try:
+                    if run_build(self.filepath, "index.html"):
+                        build_status = "\n\n⚡ Build estático gerado com sucesso!"
+                    else:
+                        build_status = "\n\n⚠️ O build estático retornou erros."
+                except Exception as be:
+                    build_status = f"\n\n⚠️ Erro ao executar o build: {be}"
+
+            messagebox.showinfo("Sucesso", f"Dados salvos com sucesso e backup criado!{build_status}")
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao salvar:\n{e}")
+
+    def trigger_build(self):
+        if not run_build:
+            messagebox.showerror("Erro", "Módulo build.py não encontrado.")
+            return
+        try:
+            if run_build(self.filepath, "index.html"):
+                messagebox.showinfo("Sucesso", "Build estático (HTML, SEO, Sitemap) gerado com sucesso!")
+            else:
+                messagebox.showerror("Erro", "O build estático falhou. Verifique os dados no JSON.")
+        except Exception as e:
+            messagebox.showerror("Erro", f"Erro ao executar build:\n{e}")
 
     def build_main_ui(self):
         # Barra superior (Header)
@@ -120,6 +161,10 @@ class PortfolioCRUDApp:
         btn_save = tk.Button(top_frame, text="💾 Salvar no JSON", bg="#20bf6b", fg="white", font=("Segoe UI", 10, "bold"), 
                              relief="flat", cursor="hand2", padx=15, pady=6, activebackground="#26de81", activeforeground="white", command=self.save_data)
         btn_save.pack(side=tk.RIGHT)
+
+        btn_build = tk.Button(top_frame, text="⚡ Gerar Build", bg="#3867d6", fg="white", font=("Segoe UI", 10, "bold"), 
+                              relief="flat", cursor="hand2", padx=15, pady=6, activebackground="#4b7bec", activeforeground="white", command=self.trigger_build)
+        btn_build.pack(side=tk.RIGHT, padx=(0, 10))
 
         self.notebook = ttk.Notebook(self.root)
         self.notebook.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
