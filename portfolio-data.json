@@ -1,801 +1,775 @@
 {
-  "profile": {
-    "name": "Daniel Dias Pereira",
-    "heroEyebrow": "Ciência de Dados • Engenharia de Dados • IA • Backend",
-    "heroTitle": "Transformando dados em soluções inteligentes",
-    "heroDescription": "Estudante e desenvolvedor com foco em Python, n8n, automações, engenharia de dados e aplicações orientadas por IA. Construo soluções práticas para problemas reais com mentalidade analítica e visão de produto.",
-    "contactMessage": "Se você procura alguém com energia para aprender rápido, construir com qualidade e evoluir junto com o time, vamos conversar.",
-    "location": "São José dos Campos - SP",
-    "availability": "Disponível para estágio e projetos",
-    "cvUrl": "assets/Currículo_Daniel Dias Pereira.pdf",
-    "email": "danieldpereira.dev@gmail.com",
-    "socials": [
-      {
-        "label": "GitHub",
-        "icon": "ri-github-fill",
-        "url": "https://www.github.com/danieldpereira/"
-      },
-      {
-        "label": "LinkedIn",
-        "icon": "ri-linkedin-fill",
-        "url": "https://www.linkedin.com/in/daniel-dias-pereira-40219425b/"
-      },
-      {
-        "label": "E-mail",
-        "icon": "ri-mail-line",
-        "url": "mailto:danieldpereira.dev@gmail.com"
-      }
+    "profile": {
+        "name": "Daniel Dias Pereira",
+        "heroEyebrow": "Ciência de Dados • Engenharia de Dados • IA • Backend",
+        "heroTitle": "Transformando dados em soluções inteligentes",
+        "heroDescription": "Estudante e desenvolvedor com foco em Python, n8n, automações, engenharia de dados e aplicações orientadas por IA. Construo soluções práticas para problemas reais com mentalidade analítica e visão de produto.",
+        "contactMessage": "Se você procura alguém com energia para aprender rápido, construir com qualidade e evoluir junto com o time, vamos conversar.",
+        "location": "São José dos Campos - SP",
+        "availability": "Disponível para estágio e projetos",
+        "cvUrl": "assets/Currículo_Daniel Dias Pereira.pdf",
+        "email": "danieldpereira.dev@gmail.com",
+        "socials": [
+            {
+                "label": "GitHub",
+                "icon": "ri-github-fill",
+                "url": "https://www.github.com/danieldpereira/"
+            },
+            {
+                "label": "LinkedIn",
+                "icon": "ri-linkedin-fill",
+                "url": "https://www.linkedin.com/in/daniel-dias-pereira-40219425b/"
+            },
+            {
+                "label": "E-mail",
+                "icon": "ri-mail-line",
+                "url": "mailto:danieldpereira.dev@gmail.com"
+            }
+        ],
+        "cta": [
+            {
+                "label": "Baixar CV",
+                "url": "assets/Currículo_Daniel Dias Pereira.pdf",
+                "type": "primary"
+            },
+            {
+                "label": "Ver projetos",
+                "url": "#projetos",
+                "type": "ghost"
+            }
+        ],
+        "stats": [
+            {
+                "value": "12+",
+                "label": "Tecnologias"
+            },
+            {
+                "value": "18+",
+                "label": "Projetos"
+            },
+            {
+                "value": "20+",
+                "label": "Certificados"
+            },
+            {
+                "value": "2",
+                "label": "Experiências profissionais"
+            }
+        ],
+        "footerText": "© 2026 Daniel Dias Pereira. Todos os direitos reservados."
+    },
+    "about": {
+        "greeting": "Olá, eu sou o Daniel!",
+        "paragraphs": [
+            "Um estudante apaixonado por tecnologia, inovação e novos desafios.",
+            "Atualmente sou estudante de Análise e Desenvolvimento de Sistemas na FATEC São José dos Campos, com foco em desenvolvimento de software, automação de tarefas, Ciência de Dados e Inteligência Artificial. Sou um desenvolvedor em contínua busca por novos aprendizados e pela construção de soluções inteligentes utilizando tecnologia.",
+            "Minha motivação está em unir desenvolvimento backend, dados e IA para criar produtos úteis, com boa experiência para quem usa e base sólida para quem mantém."
+        ],
+        "highlights": [
+            "Foco em Python e n8n para automação e integração inteligente",
+            "Interesse forte em IA, pipelines, ETL e análises orientadas por dados",
+            "Perfil jovem, curioso e orientado à evolução contínua"
+        ]
+    },
+    "education": [
+        {
+            "institution": "PIC - Programa de Iniciação Científica Jr. (OBMEP)",
+            "degree": "Programa de Iniciação Científica em Matemática",
+            "period": "fev de 2022 - dez de 2022",
+            "type": "Formação complementar",
+            "issuer": "OBMEP / Ministério da Educação",
+            "description": "Programa voltado a alunos premiados da OBMEP para aprofundamento científico em matemática, com atividades orientadas por professores qualificados de instituições de ensino superior e pesquisa."
+        },
+        {
+            "institution": "Fatec São José dos Campos - Prof. Jessen Vidal",
+            "degree": "Análise e Desenvolvimento de Sistemas",
+            "period": "fev de 2025 - dez de 2027",
+            "type": "Graduação",
+            "issuer": "Centro Paula Souza",
+            "description": "Formação superior em tecnologia com foco em desenvolvimento de software, engenharia de sistemas, banco de dados e resolução de problemas com visão prática de mercado."
+        }
     ],
-    "cta": [
-      {
-        "label": "Baixar CV",
-        "url": "assets/Currículo_Daniel Dias Pereira.pdf",
-        "type": "primary"
-      },
-      {
-        "label": "Ver projetos",
-        "url": "#projetos",
-        "type": "ghost"
-      }
+    "experiences": [
+        {
+            "title": "Engenharia de Prompt & Integrações com IA",
+            "company": "Hunt Sales",
+            "companyUrl": "https://huntsales.com.br/",
+            "type": "Estágio",
+            "period": "Abr/2025 - Jul/2025",
+            "location": "Presencial",
+            "description": "Desenvolvimento de agentes de IA personalizados para automatizar processos comerciais e realizar contato via Whatsapp e ligação com leads de empresas parceiras.",
+            "achievements": [
+                "Estruturação e otimização de prompts para melhorar a consistência e qualidade das respostas dos agentes de IA, personalizados para a necessidade de cada cliente",
+                "Desenvolvimento de integrações com CRM e APIs de sistemas para automações com IA",
+                "Apoio na evolução de processos internos orientados por dados"
+            ],
+            "technologies": [
+                "Prompt Engineering",
+                "n8n",
+                "LLMs",
+                "APIs",
+                "Automação"
+            ]
+        },
+        {
+            "title": "Estagiário em Automação de Dados",
+            "company": "IACIT Soluções Tecnológicas",
+            "companyUrl": "https://www.iacit.com.br/",
+            "type": "Estágio",
+            "period": "Nov/2025 - Atual",
+            "location": "Remoto",
+            "description": "Atuação em uma célula de inovação focada em automações com IA e dados para o desenvolvimento soluções personalizadas para clientes, utilizando Python, n8n e tecnologias de IA para transformar dados em insights e ações automatizadas.",
+            "achievements": [
+                "Apoio em fluxos de transformação e organização de dados",
+                "Participação no desenvolvimento de automações com Inteligência Artificial e visão de engenharia",
+                "Desenvolvimento de automações inteligentes voltadas e melhorias de processos internos de diferentes áreas da empresa",
+                "Desenvolvimento de soluções personalizadas a clientes, conectando sistemas e desenvolvendo soluções"
+            ],
+            "technologies": [
+                "Python",
+                "n8n",
+                "LLMs",
+                "Ollama",
+                "SQL",
+                "Docker",
+                "Automação"
+            ]
+        }
     ],
-    "stats": [
-      {
-        "value": "12+",
-        "label": "Tecnologias"
-      },
-      {
-        "value": "18+",
-        "label": "Projetos"
-      },
-      {
-        "value": "20+",
-        "label": "Certificados"
-      },
-      {
-        "value": "2",
-        "label": "Experiências profissionais"
-      }
+    "certificates": [
+        {
+            "title": "Competência Transversal - Tecnologia da Informação e Comunicação - SENAI",
+            "url": "http://www.sp.senai.br/consulta-certificado?qrcode=00010478/6712116"
+        },
+        {
+            "title": "Encontro Regional Anual do PIC e do ONE - SP04 2022",
+            "url": "https://drive.google.com/file/d/16FakTBZZqbfa8gE7ZyFyLfRq100oKGel/view?usp=share_link"
+        },
+        {
+            "title": "Maratona de Programação VI Edição da Kenzie",
+            "url": "https://drive.google.com/file/d/1yBaD5ad9JnqAwBnejvza_3BmcOVjYPPx/view?usp=share_link"
+        },
+        {
+            "title": "Participação no 16º PIC",
+            "url": "https://drive.google.com/file/d/1iYMNokxEIFOqpgc76WFi-XHYPmt5FDwK/view?usp=share_link"
+        },
+        {
+            "title": "CC50: Introdução à Ciência da Computação - O Curso de Harvard, no Brasil",
+            "url": "https://drive.google.com/file/d/14ySJ7f_5g_fUevcx3v0rHkoO92iPJ04a/view?usp=sharing"
+        },
+        {
+            "title": "Desenvolvimento de equipes - Senado",
+            "url": "https://drive.google.com/file/d/1Z3Jb3jn9teZcVN5s8L9t9ZlFfrRbZote/view?usp=sharing"
+        },
+        {
+            "title": "Bootcamp Desenvolvimento de Aplicação Web - Inteli",
+            "url": "https://drive.google.com/file/d/1YJOFE0rOC6SxM0_LzeuhWs_vVhntBlZ7/view"
+        },
+        {
+            "title": "Introdução à programação com Python - Santander Open Academy",
+            "url": "https://drive.google.com/file/d/1yhR7lAjYWfLMDHMvll8q5aTRNYxl-PGt/view?usp=sharing"
+        },
+        {
+            "title": "Introdução à Ciência de Dados - Santander Open Academy",
+            "url": "https://drive.google.com/file/d/1VmdBarKNdG-xH-QUT6d8LrPCE-FHMR7D/view?usp=sharing"
+        },
+        {
+            "title": "Curso EAD Python Básico 40h - Cephas - Centro de Educação Profissional",
+            "url": "https://drive.google.com/file/d/1pTu7KlhFlnTlW_EBZ2tnwfc_AFDIZ391/view?usp=sharing"
+        },
+        {
+            "title": "Build with AI 2025 - GDG São José dos Campos",
+            "url": "https://media.licdn.com/dms/image/v2/D4D2DAQHxxpGG_0wlHg/profile-treasury-image-shrink_8192_8192/B4DZcza2.yHMAg-/0/1748914368890?e=1763478000&v=beta&t=eBZdsMz0VLzLP8Xo56Xmxe1IbO9X0_cCwiUZDurMTac"
+        },
+        {
+            "title": "Prompting Responsável: Maximizar a IA no seu negócio - Santander Open Academy",
+            "url": "https://drive.google.com/file/d/1LPT1Lpdqo_zmu-uugGqi_GuCixsDhUlL/view?usp=sharing"
+        },
+        {
+            "title": "Competência Transversal - Lógica de programação - SENAI",
+            "url": "https://drive.google.com/file/d/1MbCMY4GaxTL3IolAzl2rINyP-LOicYIF/view?usp=sharing"
+        },
+        {
+            "title": "Semana da Jornada de Dados - Pipeline Completa de Dados: Python, SQL e n8n - Jornada de Dados",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7362271287760633856/"
+        },
+        {
+            "title": "VS Code Dev Days - Github Community São José dos Campos",
+            "url": "https://media.licdn.com/dms/image/v2/D4D2DAQE1xxaSZ_EOIA/profile-treasury-image-shrink_800_800/B4DZmmtbduH4AY-/0/1759438551445?e=1763478000&v=beta&t=jGsj0WZqT0MvhMZyel_dt2tfvDjat8tSnrE3ew8HCRE"
+        },
+        {
+            "title": "Modelagem de Dados - Fundação Bradesco",
+            "url": "https://drive.google.com/file/d/1_JCxEP9rU8SWsqhYeiM0NqOCQy_hPQkH/view?usp=sharing"
+        },
+        {
+            "title": "INTRODUÇÃO À PROGRAMAÇÃO ORIENTADA A OBJETOS (POO) - Fundação Bradesco",
+            "url": "#"
+        },
+        {
+            "title": "Fundamentos do ChatGPT - Santander Open Academy",
+            "url": "https://drive.google.com/file/d/1oPpWLJZyHKSLbAQrhqX1rYKw29yHYrsm/view?usp=sharing"
+        },
+        {
+            "title": "Bootcamp Santander 2025 - Ciência de Dados com Python - DIO / Santander Open Academy",
+            "url": "https://www.dio.me/certificate/LC6L9RUH/share"
+        },
+        {
+            "title": "IA na prática: como dados bem estruturados fazem a diferença - Fundação Bradesco",
+            "url": "#"
+        }
     ],
-    "footerText": "© 2026 Daniel Dias Pereira. Todos os direitos reservados."
-  },
-  "about": {
-    "greeting": "Olá, eu sou o Daniel!",
-    "paragraphs": [
-      "Um estudante apaixonado por tecnologia, inovação e novos desafios.",
-      "Atualmente sou estudante de Análise e Desenvolvimento de Sistemas na FATEC São José dos Campos, com foco em desenvolvimento de software, automação de tarefas, Ciência de Dados e Inteligência Artificial. Sou um desenvolvedor em contínua busca por novos aprendizados e pela construção de soluções inteligentes utilizando tecnologia.",
-      "Minha motivação está em unir desenvolvimento backend, dados e IA para criar produtos úteis, com boa experiência para quem usa e base sólida para quem mantém."
+    "skills": [
+        {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+            "alt": "Python",
+            "category": "Linguagem"
+        },
+        {
+            "name": "Flask",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+            "alt": "Flask",
+            "category": "Backend"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            "alt": "JavaScript",
+            "category": "Frontend"
+        },
+        {
+            "name": "MySQL",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+            "alt": "MySQL",
+            "category": "Banco de Dados"
+        },
+        {
+            "name": "HTML5",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            "alt": "HTML5",
+            "category": "Frontend"
+        },
+        {
+            "name": "CSS3",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            "alt": "CSS3",
+            "category": "Frontend"
+        },
+        {
+            "name": "Git",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+            "alt": "Git",
+            "category": "Versionamento"
+        },
+        {
+            "name": "Github",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+            "alt": "Github",
+            "category": "Versionamento"
+        },
+        {
+            "name": "Docker",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg",
+            "alt": "Docker",
+            "category": "Infraestrutura"
+        },
+        {
+            "name": "n8n",
+            "icon": "./assets/Icons/n8n-color.svg",
+            "alt": "n8n",
+            "category": "Automação"
+        },
+        {
+            "name": "Ollama",
+            "icon": "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/ollama.png",
+            "alt": "Ollama",
+            "category": "IA"
+        },
+        {
+            "name": "OpenAI",
+            "icon": "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico",
+            "alt": "OpenAI",
+            "category": "IA"
+        },
+        {
+            "name": "Arduino",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+            "alt": "Arduino",
+            "category": "Hardware"
+        }
     ],
-    "highlights": [
-      "Foco em Python e n8n para automação e integração inteligente",
-      "Interesse forte em IA, pipelines, ETL e análises orientadas por dados",
-      "Perfil jovem, curioso e orientado à evolução contínua"
+    "projects": [
+        {
+            "title": "Sistema de gestão de atestados e avaliação Scrum",
+            "description": "Plataforma web completa para gerenciamento de atestados médicos e avaliação de equipes Scrum, desenvolvida como Projeto Integrador (API) no 1º semestre de ADS na Fatec.",
+            "longDescription": "Aplicação fullstack desenvolvida em equipe com metodologia Scrum, composta por frontend em HTML, CSS e JavaScript e backend em Python/Flask. O sistema permite que alunos enviem e acompanhem atestados médicos e que funcionários os aprovem ou rejeitem. Conta ainda com um módulo de avaliação 360° para equipes ágeis, cadastro de times, geração de relatórios de desempenho e controle de acesso por perfis. O projeto foi entregue em três sprints com backlog priorizado e protótipo em Figma.",
+            "category": "Projeto acadêmico",
+            "year": "2023",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/API1Semestre.png",
+                "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
+                "./assets/imagens/ThumbProjetos/API1Semestre.png"
+            ],
+            "technologies": [
+                "Python",
+                "Flask",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Scrum"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/API-1"
+                }
+            ]
+        },
+        {
+            "title": "Cálculos com Datas",
+            "description": "Calculadora web para calcular diferenças entre datas ou a distância em dias a partir da data atual, com interface simples e responsiva.",
+            "longDescription": "Projeto desenvolvido com foco no estudo prático de manipulação de datas em JavaScript puro. A ferramenta permite ao usuário calcular o número de dias entre duas datas ou a distância de uma data em relação ao dia atual, exibindo o resultado de forma clara e imediata. Exercita conceitos de DOM, eventos e o objeto Date nativo do JS.",
+            "category": "Ferramenta web",
+            "year": "2023",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
+                "./assets/imagens/ThumbProjetos/ProjetoDatas.png"
+            ],
+            "technologies": [
+                "JavaScript",
+                "HTML",
+                "CSS"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/Calculos_com_datas"
+                },
+                {
+                    "label": "Demonstração",
+                    "url": "https://danieldpereira.github.io/Calculos_com_datas/"
+                }
+            ]
+        },
+        {
+            "title": "Site de Vagas BTG Pactual",
+            "description": "Portal de vagas de emprego desenvolvido em equipe durante o Bootcamp da Inteli, com foco em experiência de navegação e organização ágil por sprints.",
+            "longDescription": "Projeto colaborativo entregue no Bootcamp da Inteli em parceria com o BTG Pactual. O site apresenta oportunidades de carreira com filtragem e navegação intuitiva, foi construído com HTML, CSS e JavaScript e gerenciado com metodologia Scrum. A experiência consolidou competências em trabalho em equipe, prototipação rápida e entrega iterativa.",
+            "category": "Bootcamp",
+            "year": "2023",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
+                "./assets/imagens/ThumbProjetos/ProjetoBTG.png"
+            ],
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Scrum"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/bootcamp-btg-project"
+                },
+                {
+                    "label": "Demonstração",
+                    "url": "https://danieldpereira.github.io/bootcamp-btg-project/"
+                }
+            ]
+        },
+        {
+            "title": "Portfólio Pessoal",
+            "description": "Site de portfólio desenvolvido do zero com HTML, CSS e JavaScript para apresentar minha trajetória, habilidades técnicas e projetos de forma profissional.",
+            "longDescription": "Projeto de apresentação profissional construído com foco em clareza visual, performance e comunicação. Conta com seções de experiência, habilidades e projetos, além de carregamento dinâmico de dados via JSON. O portfólio está em evolução contínua, incorporando melhorias de design e novas funcionalidades conforme o avanço na carreira.",
+            "category": "Portfólio",
+            "year": "2025",
+            "status": "Em evolução",
+            "thumbnail": "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
+                "./assets/imagens/ThumbProjetos/PortfólioPrint.png"
+            ],
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/danieldias.py"
+                },
+                {
+                    "label": "Demonstração",
+                    "url": "https://danieldpereira.github.io/danieldias.py/"
+                }
+            ]
+        },
+        {
+            "title": "Passeio do Cavalo",
+            "description": "Implementação em Python do clássico problema do Passeio do Cavalo, que percorre todas as casas de um tabuleiro de xadrez 8×8 sem repetição.",
+            "longDescription": "Solução algorítmica para o problema combinatório do Passeio do Cavalo utilizando backtracking com a heurística de Warnsdorff, que prioriza movimentos para casas com menos opções futuras. O programa exibe o trajeto em tempo real por meio de uma animação ASCII, evidenciando a lógica de busca e otimização aplicada.",
+            "category": "Algoritmos",
+            "year": "2024",
+            "status": "Concluído",
+            "thumbnail": "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
+            "images": [
+                "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
+                "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true"
+            ],
+            "technologies": [
+                "Python",
+                "Algoritmos",
+                "Backtracking"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/PasseioDoCavalo"
+                }
+            ]
+        },
+        {
+            "title": "QR Code Generator",
+            "description": "Gerador de QR Code 100% client-side que cria códigos estáticos, gratuitos e sem expiração diretamente no navegador, sem envio de dados a servidores externos.",
+            "longDescription": "Aplicação web leve que utiliza a biblioteca qrcode.js para codificar URLs diretamente no QR Code, eliminando qualquer dependência de backend. O projeto prioriza privacidade e simplicidade: basta inserir o link, gerar o código e baixar a imagem. Apresenta interface limpa e responsiva com feedback visual imediato.",
+            "category": "Ferramenta web",
+            "year": "2025",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/QrCodeJS.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/QrCodeJS.png",
+                "./assets/imagens/ThumbProjetos/QrCodeJS.png"
+            ],
+            "technologies": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "qrcode.js"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/qr-code-generator"
+                },
+                {
+                    "label": "Demonstração",
+                    "url": "https://danieldpereira.github.io/qr-code-generator/"
+                },
+                {
+                    "label": "Post LinkedIn",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_qrcode-desenvolvimentoweb-opensource-activity-7388308383453298688-gYP4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        },
+        {
+            "title": "PalavrometrIA",
+            "description": "Analisador web de textos com PLN que extrai estatísticas linguísticas, palavras-chave, entidades nomeadas, legibilidade e gráficos — a partir de texto colado, URL ou arquivo.",
+            "longDescription": "Aplicação fullstack em Python/Flask que aplica uma pipeline completa de Processamento de Linguagem Natural com SpaCy. Aceita múltiplas fontes de entrada (texto, URL via BeautifulSoup e arquivos .txt/.pdf/.docx via PyMuPDF) e retorna um dashboard com contagem de palavras, distribuição gramatical (POS), frequência de termos, reconhecimento de entidades (NER), índice de legibilidade Gulpease e tempo estimado de leitura. Os resultados são visualizados com Chart.js e podem ser exportados como PDF via FPDF. Suporta textos em português e inglês com detecção automática de idioma.",
+            "category": "IA e NLP",
+            "year": "2025",
+            "status": "Concluído",
+            "thumbnail": "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
+            "images": [
+                "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
+                "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true"
+            ],
+            "technologies": [
+                "Python",
+                "Flask",
+                "SpaCy",
+                "PyMuPDF",
+                "BeautifulSoup",
+                "JavaScript",
+                "Chart.js"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/PalavrometrIA"
+                },
+                {
+                    "label": "Post LinkedIn",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_inteligaeanciaartificial-ia-pln-activity-7390191978845560832-YZrR/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        },
+        {
+            "title": "JSON → TOON Converter (n8n)",
+            "description": "Workflow no n8n que converte estruturas JSON para o formato TOON, reduzindo o consumo de tokens e melhorando a qualidade de contexto em pipelines com agentes de IA.",
+            "longDescription": "Automação desenvolvida no n8n para transformar dados JSON verbosos no formato TOON (Text-Oriented Object Notation), uma representação mais compacta e eficiente para consumo por modelos de linguagem. O workflow é especialmente útil em pipelines de IA onde o contexto precisa ser denso em informação e econômico em tokens, contribuindo diretamente para a qualidade das respostas dos agentes e redução de custos de inferência.",
+            "category": "Automação e IA",
+            "year": "2025",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
+                "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png"
+            ],
+            "technologies": [
+                "n8n",
+                "JSON",
+                "Automação",
+                "IA"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/n8n-json2toon-converter"
+                },
+                {
+                    "label": "Post LinkedIn",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_n8n-tecnologia-inteligenciaartificial-activity-7394390940435767296-9Ydx?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        },
+        {
+            "title": "Monitor de Juro Real (ETL Financeiro)",
+            "description": "Pipeline ETL em Python que coleta dados do Banco Central do Brasil, calcula o juro real da renda fixa e gera visualizações históricas para análise financeira.",
+            "longDescription": "Projeto de engenharia de dados que implementa as três etapas de um pipeline ETL: extração de indicadores financeiros via API pública do Banco Central (SELIC e IPCA), transformação e cálculo do juro real com Pandas, e carregamento dos resultados em visualizações interativas. O projeto demonstra domínio de coleta de dados de APIs REST, tratamento de séries temporais e apresentação de informações financeiras baseadas em dados públicos.",
+            "category": "Engenharia de Dados",
+            "year": "2025",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
+                "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
+            ],
+            "technologies": [
+                "Python",
+                "ETL",
+                "API Banco Central",
+                "Pandas",
+                "Data Visualization"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/etl-juro-real-brasil"
+                },
+                {
+                    "label": "Post LinkedIn",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_python-datascience-financas-activity-7419545810574655488-BpFf?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        },
+        {
+            "title": "Crypto Miner Pulse",
+            "description": "Dashboard web interativo para monitoramento em tempo real de mineração de criptomoedas, consumindo a API local do XMRig e exibindo métricas operacionais em painéis visuais.",
+            "longDescription": "Aplicação orientada a observabilidade que se conecta à API REST do minerador XMRig e apresenta métricas como hashrate, aceitações, rejeições, uso de CPU e histórico de desempenho em dashboards dinâmicos. O projeto demonstra integração com APIs locais, atualização em tempo real sem frameworks pesados e boas práticas de visualização de dados para apoio à tomada de decisão.",
+            "category": "Dashboard de Dados",
+            "year": "2025",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
+                "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png"
+            ],
+            "technologies": [
+                "JavaScript",
+                "Dashboard",
+                "API",
+                "Visualização de dados"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/crypto-miner-pulse"
+                },
+                {
+                    "label": "Demonstração",
+                    "url": "https://danieldpereira.github.io/crypto-miner-pulse/"
+                },
+                {
+                    "label": "Post LinkedIn",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_dataanalytics-dashboard-webdevelopment-activity-7427096690605649920-bj0s?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        },
+        {
+            "title": "Balancify (Estruturador Patrimonial)",
+            "description": "Plataforma em Python para estruturação e análise de balanço patrimonial com relatórios dinâmicos e indicadores econômicos.",
+            "longDescription": "Sistema de gestão financeira pessoal e empresarial que automatiza a organização de ativos, passivos e patrimônio líquido. Apresenta cálculo dinâmico de liquidez, estrutura de capital e indicadores financeiros amigáveis.",
+            "category": "Finanças e Dados",
+            "year": "2026",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/Captura de Tela (137).png\n",
+            "images": [
+                "./assets/imagens/ThumbProjetos/Captura de Tela (137).png"
+            ],
+            "technologies": [
+                "Python",
+                "Pandas",
+                "Financial Analysis",
+                "Data Analytics"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/Balancify"
+                },
+                {
+                    "label": "Post LinkedIn",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_como-transformar-uma-atividade-da-faculdade-activity-7475326595768107008-uvgI?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        },
+        {
+            "title": "FII Monitor (Gestão de FIIs)",
+            "description": "Gerenciador de carteiras de Fundos de Investimento Imobiliário (FIIs) com análise de dividendos, cotações e métricas da B3 via yfinance.",
+            "longDescription": "Aplicação em Python direcionada ao mercado financeiro para acompanhamento e gestão de carteiras de FIIs negociados na B3. Coleta cotações em tempo real via yfinance, calcula indicadores de rentabilidade e projeta rendimentos com dashboards visuais.",
+            "category": "Finanças e Dados",
+            "year": "2026",
+            "status": "Concluído",
+            "thumbnail": ".",
+            "images": [],
+            "technologies": [
+                "Python",
+                "yfinance",
+                "B3",
+                "Pandas",
+                "Financial Analysis"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/FII-Monitor"
+                }
+            ]
+        },
+        {
+            "title": "Gerenciador de Usuários JavaFX & MySQL",
+            "description": "Sistema desktop em Java com JavaFX e MySQL para administração de usuários, aplicando POO, padrão DAO e criptografia BCrypt.",
+            "longDescription": "Aplicação desktop robusta desenvolvida em Java como estudo de Programação Orientada a Objetos (POO). Implementa padrão CRUD completo, arquitetura em camadas (DAO), interface gráfica moderna em JavaFX e armazenamento seguro de credenciais com BCrypt e banco MySQL.",
+            "category": "Projeto Acadêmico",
+            "year": "2026",
+            "status": "Concluído",
+            "thumbnail": ".",
+            "images": [],
+            "technologies": [
+                "Java",
+                "JavaFX",
+                "MySQL",
+                "POO",
+                "BCrypt"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/CRUD-users-JavaFX"
+                }
+            ]
+        },
+        {
+            "title": "PDF OCR Reader",
+            "description": "Sistema de extração e reconhecimento óptico de caracteres (OCR) em arquivos PDF digitalizados utilizando Tesseract e Python.",
+            "longDescription": "Pipeline de engenharia de dados em Python voltado para OCR (Optical Character Recognition). Processa documentos digitalizados em PDF, aplica algoritmos de tratamento de imagem e extrai textos não estruturados utilizando Tesseract OCR.",
+            "category": "Engenharia de Dados",
+            "year": "2026",
+            "status": "Concluído",
+            "thumbnail": ".",
+            "images": [],
+            "technologies": [
+                "Python",
+                "Tesseract OCR",
+                "OpenCV",
+                "PDF Processing"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/pdf_ocr_reader"
+                }
+            ]
+        },
+        {
+            "title": "Aerocode — Gestão de Aeronaves",
+            "description": "Sistema em linha de comando (CLI) em TypeScript para controle de produção de aeronaves, com princípios avançados de POO.",
+            "longDescription": "Aplicação desenvolvida em TypeScript para gerenciamento de processos e peças na produção aeronáutica (Aerocode). Projeto acadêmico de POO da Fatec SJC aplicando conceitos de encapsulamento, herança, polimorfismo e design patterns.",
+            "category": "Projeto Acadêmico",
+            "year": "2026",
+            "status": "Concluído",
+            "thumbnail": ".",
+            "images": [],
+            "technologies": [
+                "TypeScript",
+                "POO",
+                "Node.js",
+                "CLI"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/AV1"
+                }
+            ]
+        },
+        {
+            "title": "ipynbCleaner (PyPI Package)",
+            "description": "Ferramenta e pacote Python publicado no PyPI para limpeza e otimização de arquivos Jupyter Notebook (.ipynb) para compartilhamento eficiente com LLMs.",
+            "longDescription": "Biblioteca Python desenvolvida e publicada no PyPI (ipynbcleaner) que otimiza arquivos Jupyter Notebook (.ipynb) removendo metadados e saídas volumosas, preservando a estrutura de código e documentação para integração econômica com modelos de linguagem e agentes de IA.",
+            "category": "Ferramenta & Biblioteca",
+            "year": "2026",
+            "status": "Publicado no PyPI",
+            "thumbnail": ".",
+            "images": [],
+            "technologies": [
+                "Python",
+                "PyPI",
+                "Jupyter",
+                "LLMs",
+                "CLI"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/ipynbCleaner"
+                },
+                {
+                    "label": "PyPI Package",
+                    "url": "https://pypi.org/project/ipynbcleaner/"
+                }
+            ]
+        },
+        {
+            "title": "Brasil na Copa AI (RAG Chatbot)",
+            "description": "Chatbot com IA e RAG (Retrieval-Augmented Generation) para responder sobre o histórico e estatísticas da seleção brasileira em Copas do Mundo.",
+            "longDescription": "Aplicação desenvolvida em Python que utiliza a arquitetura RAG (Retrieval-Augmented Generation) com LangChain e a API do Google Gemini para realizar consultas semânticas e estatísticas sobre a trajetória da Seleção Brasileira de Futebol em Copas do Mundo.",
+            "category": "IA e NLP",
+            "year": "2026",
+            "status": "Concluído",
+            "thumbnail": "./assets/imagens/ThumbProjetos/Captura de Tela (152).png",
+            "images": [
+                "./assets/imagens/ThumbProjetos/Captura de Tela (152).png",
+                "./assets/imagens/ThumbProjetos/Captura de Tela (151).png",
+                "./assets/imagens/ThumbProjetos/Captura de Tela (154).png"
+            ],
+            "technologies": [
+                "Python",
+                "LangChain",
+                "RAG",
+                "Gemini API",
+                "LLMs",
+                "ChromaDB",
+                "Streamlit"
+            ],
+            "links": [
+                {
+                    "label": "Repositório",
+                    "url": "https://github.com/DanielDPereira/BrasilnaCopaAI"
+                },
+                {
+                    "label": "Post Linkedin",
+                    "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_inteligenciaartificial-generativeai-rag-activity-7490200507957952512-ucQ_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
+                }
+            ]
+        }
     ]
-  },
-  "education": [
-    {
-      "institution": "PIC - Programa de Iniciação Científica Jr. (OBMEP)",
-      "degree": "Programa de Iniciação Científica em Matemática",
-      "period": "fev de 2022 - dez de 2022",
-      "type": "Formação complementar",
-      "issuer": "OBMEP / Ministério da Educação",
-      "description": "Programa voltado a alunos premiados da OBMEP para aprofundamento científico em matemática, com atividades orientadas por professores qualificados de instituições de ensino superior e pesquisa."
-    },
-    {
-      "institution": "Fatec São José dos Campos - Prof. Jessen Vidal",
-      "degree": "Análise e Desenvolvimento de Sistemas",
-      "period": "fev de 2025 - dez de 2027",
-      "type": "Graduação",
-      "issuer": "Centro Paula Souza",
-      "description": "Formação superior em tecnologia com foco em desenvolvimento de software, engenharia de sistemas, banco de dados e resolução de problemas com visão prática de mercado."
-    }
-  ],
-  "experiences": [
-    {
-      "title": "Engenharia de Prompt & Integrações com IA",
-      "company": "Hunt Sales",
-      "companyUrl": "https://huntsales.com.br/",
-      "type": "Estágio",
-      "period": "Abr/2025 - Jul/2025",
-      "location": "Presencial",
-      "description": "Desenvolvimento de agentes de IA personalizados para automatizar processos comerciais e realizar contato via Whatsapp e ligação com leads de empresas parceiras.",
-      "achievements": [
-        "Estruturação e otimização de prompts para melhorar a consistência e qualidade das respostas dos agentes de IA, personalizados para a necessidade de cada cliente",
-        "Desenvolvimento de integrações com CRM e APIs de sistemas para automações com IA",
-        "Apoio na evolução de processos internos orientados por dados"
-      ],
-      "technologies": [
-        "Prompt Engineering",
-        "n8n",
-        "LLMs",
-        "APIs",
-        "Automação"
-      ]
-    },
-    {
-      "title": "Estagiário em Automação de Dados",
-      "company": "IACIT Soluções Tecnológicas",
-      "companyUrl": "https://www.iacit.com.br/",
-      "type": "Estágio",
-      "period": "Nov/2025 - Atual",
-      "location": "Remoto",
-      "description": "Atuação em uma célula de inovação focada em automações com IA e dados para o desenvolvimento soluções personalizadas para clientes, utilizando Python, n8n e tecnologias de IA para transformar dados em insights e ações automatizadas.",
-      "achievements": [
-        "Apoio em fluxos de transformação e organização de dados",
-        "Participação no desenvolvimento de automações com Inteligência Artificial e visão de engenharia",
-        "Desenvolvimento de automações inteligentes voltadas e melhorias de processos internos de diferentes áreas da empresa",
-        "Desenvolvimento de soluções personalizadas a clientes, conectando sistemas e desenvolvendo soluções"
-      ],
-      "technologies": [
-        "Python",
-        "n8n",
-        "LLMs",
-        "Ollama",
-        "SQL",
-        "Docker",
-        "Automação"
-      ]
-    }
-  ],
-  "certificates": [
-    {
-      "title": "Competência Transversal - Tecnologia da Informação e Comunicação - SENAI",
-      "url": "http://www.sp.senai.br/consulta-certificado?qrcode=00010478/6712116"
-    },
-    {
-      "title": "Encontro Regional Anual do PIC e do ONE - SP04 2022",
-      "url": "https://drive.google.com/file/d/16FakTBZZqbfa8gE7ZyFyLfRq100oKGel/view?usp=share_link"
-    },
-    {
-      "title": "Maratona de Programação VI Edição da Kenzie",
-      "url": "https://drive.google.com/file/d/1yBaD5ad9JnqAwBnejvza_3BmcOVjYPPx/view?usp=share_link"
-    },
-    {
-      "title": "Participação no 16º PIC",
-      "url": "https://drive.google.com/file/d/1iYMNokxEIFOqpgc76WFi-XHYPmt5FDwK/view?usp=share_link"
-    },
-    {
-      "title": "CC50: Introdução à Ciência da Computação - O Curso de Harvard, no Brasil",
-      "url": "https://drive.google.com/file/d/14ySJ7f_5g_fUevcx3v0rHkoO92iPJ04a/view?usp=sharing"
-    },
-    {
-      "title": "Desenvolvimento de equipes - Senado",
-      "url": "https://drive.google.com/file/d/1Z3Jb3jn9teZcVN5s8L9t9ZlFfrRbZote/view?usp=sharing"
-    },
-    {
-      "title": "Bootcamp Desenvolvimento de Aplicação Web - Inteli",
-      "url": "https://drive.google.com/file/d/1YJOFE0rOC6SxM0_LzeuhWs_vVhntBlZ7/view"
-    },
-    {
-      "title": "Introdução à programação com Python - Santander Open Academy",
-      "url": "https://drive.google.com/file/d/1yhR7lAjYWfLMDHMvll8q5aTRNYxl-PGt/view?usp=sharing"
-    },
-    {
-      "title": "Introdução à Ciência de Dados - Santander Open Academy",
-      "url": "https://drive.google.com/file/d/1VmdBarKNdG-xH-QUT6d8LrPCE-FHMR7D/view?usp=sharing"
-    },
-    {
-      "title": "Curso EAD Python Básico 40h - Cephas - Centro de Educação Profissional",
-      "url": "https://drive.google.com/file/d/1pTu7KlhFlnTlW_EBZ2tnwfc_AFDIZ391/view?usp=sharing"
-    },
-    {
-      "title": "Build with AI 2025 - GDG São José dos Campos",
-      "url": "https://media.licdn.com/dms/image/v2/D4D2DAQHxxpGG_0wlHg/profile-treasury-image-shrink_8192_8192/B4DZcza2.yHMAg-/0/1748914368890?e=1763478000&v=beta&t=eBZdsMz0VLzLP8Xo56Xmxe1IbO9X0_cCwiUZDurMTac"
-    },
-    {
-      "title": "Prompting Responsável: Maximizar a IA no seu negócio - Santander Open Academy",
-      "url": "https://drive.google.com/file/d/1LPT1Lpdqo_zmu-uugGqi_GuCixsDhUlL/view?usp=sharing"
-    },
-    {
-      "title": "Competência Transversal - Lógica de programação - SENAI",
-      "url": "https://drive.google.com/file/d/1MbCMY4GaxTL3IolAzl2rINyP-LOicYIF/view?usp=sharing"
-    },
-    {
-      "title": "Semana da Jornada de Dados - Pipeline Completa de Dados: Python, SQL e n8n - Jornada de Dados",
-      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7362271287760633856/"
-    },
-    {
-      "title": "VS Code Dev Days - Github Community São José dos Campos",
-      "url": "https://media.licdn.com/dms/image/v2/D4D2DAQE1xxaSZ_EOIA/profile-treasury-image-shrink_800_800/B4DZmmtbduH4AY-/0/1759438551445?e=1763478000&v=beta&t=jGsj0WZqT0MvhMZyel_dt2tfvDjat8tSnrE3ew8HCRE"
-    },
-    {
-      "title": "Modelagem de Dados - Fundação Bradesco",
-      "url": "https://drive.google.com/file/d/1_JCxEP9rU8SWsqhYeiM0NqOCQy_hPQkH/view?usp=sharing"
-    },
-    {
-      "title": "INTRODUÇÃO À PROGRAMAÇÃO ORIENTADA A OBJETOS (POO) - Fundação Bradesco",
-      "url": "#"
-    },
-    {
-      "title": "Fundamentos do ChatGPT - Santander Open Academy",
-      "url": "https://drive.google.com/file/d/1oPpWLJZyHKSLbAQrhqX1rYKw29yHYrsm/view?usp=sharing"
-    },
-    {
-      "title": "Bootcamp Santander 2025 - Ciência de Dados com Python - DIO / Santander Open Academy",
-      "url": "https://www.dio.me/certificate/LC6L9RUH/share"
-    },
-    {
-      "title": "IA na prática: como dados bem estruturados fazem a diferença - Fundação Bradesco",
-      "url": "#"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Python",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      "alt": "Python",
-      "category": "Linguagem"
-    },
-    {
-      "name": "Flask",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-      "alt": "Flask",
-      "category": "Backend"
-    },
-    {
-      "name": "JavaScript",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      "alt": "JavaScript",
-      "category": "Frontend"
-    },
-    {
-      "name": "MySQL",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      "alt": "MySQL",
-      "category": "Banco de Dados"
-    },
-    {
-      "name": "HTML5",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      "alt": "HTML5",
-      "category": "Frontend"
-    },
-    {
-      "name": "CSS3",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      "alt": "CSS3",
-      "category": "Frontend"
-    },
-    {
-      "name": "Git",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      "alt": "Git",
-      "category": "Versionamento"
-    },
-    {
-      "name": "Github",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-      "alt": "Github",
-      "category": "Versionamento"
-    },
-    {
-      "name": "Docker",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg",
-      "alt": "Docker",
-      "category": "Infraestrutura"
-    },
-    {
-      "name": "n8n",
-      "icon": "./assets/Icons/n8n-color.svg",
-      "alt": "n8n",
-      "category": "Automação"
-    },
-    {
-      "name": "Ollama",
-      "icon": "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/ollama.png",
-      "alt": "Ollama",
-      "category": "IA"
-    },
-    {
-      "name": "OpenAI",
-      "icon": "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico",
-      "alt": "OpenAI",
-      "category": "IA"
-    },
-    {
-      "name": "Arduino",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
-      "alt": "Arduino",
-      "category": "Hardware"
-    }
-  ],
-  "projects": [
-    {
-      "title": "Sistema de gestão de atestados e avaliação Scrum",
-      "description": "Plataforma web completa para gerenciamento de atestados médicos e avaliação de equipes Scrum, desenvolvida como Projeto Integrador (API) no 1º semestre de ADS na Fatec.",
-      "longDescription": "Aplicação fullstack desenvolvida em equipe com metodologia Scrum, composta por frontend em HTML, CSS e JavaScript e backend em Python/Flask. O sistema permite que alunos enviem e acompanhem atestados médicos e que funcionários os aprovem ou rejeitem. Conta ainda com um módulo de avaliação 360° para equipes ágeis, cadastro de times, geração de relatórios de desempenho e controle de acesso por perfis. O projeto foi entregue em três sprints com backlog priorizado e protótipo em Figma.",
-      "category": "Projeto acadêmico",
-      "year": "2023",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/API1Semestre.png",
-        "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
-        "./assets/imagens/ThumbProjetos/API1Semestre.png"
-      ],
-      "technologies": [
-        "Python",
-        "Flask",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Scrum"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/API-1"
-        }
-      ]
-    },
-    {
-      "title": "Cálculos com Datas",
-      "description": "Calculadora web para calcular diferenças entre datas ou a distância em dias a partir da data atual, com interface simples e responsiva.",
-      "longDescription": "Projeto desenvolvido com foco no estudo prático de manipulação de datas em JavaScript puro. A ferramenta permite ao usuário calcular o número de dias entre duas datas ou a distância de uma data em relação ao dia atual, exibindo o resultado de forma clara e imediata. Exercita conceitos de DOM, eventos e o objeto Date nativo do JS.",
-      "category": "Ferramenta web",
-      "year": "2023",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/ProjetoDatas.png",
-        "./assets/imagens/ThumbProjetos/ProjetoDatas.png"
-      ],
-      "technologies": [
-        "JavaScript",
-        "HTML",
-        "CSS"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/Calculos_com_datas"
-        },
-        {
-          "label": "Demonstração",
-          "url": "https://danieldpereira.github.io/Calculos_com_datas/"
-        }
-      ]
-    },
-    {
-      "title": "Site de Vagas BTG Pactual",
-      "description": "Portal de vagas de emprego desenvolvido em equipe durante o Bootcamp da Inteli, com foco em experiência de navegação e organização ágil por sprints.",
-      "longDescription": "Projeto colaborativo entregue no Bootcamp da Inteli em parceria com o BTG Pactual. O site apresenta oportunidades de carreira com filtragem e navegação intuitiva, foi construído com HTML, CSS e JavaScript e gerenciado com metodologia Scrum. A experiência consolidou competências em trabalho em equipe, prototipação rápida e entrega iterativa.",
-      "category": "Bootcamp",
-      "year": "2023",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/ProjetoBTG.png",
-        "./assets/imagens/ThumbProjetos/ProjetoBTG.png"
-      ],
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Scrum"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/bootcamp-btg-project"
-        },
-        {
-          "label": "Demonstração",
-          "url": "https://danieldpereira.github.io/bootcamp-btg-project/"
-        }
-      ]
-    },
-    {
-      "title": "Portfólio Pessoal",
-      "description": "Site de portfólio desenvolvido do zero com HTML, CSS e JavaScript para apresentar minha trajetória, habilidades técnicas e projetos de forma profissional.",
-      "longDescription": "Projeto de apresentação profissional construído com foco em clareza visual, performance e comunicação. Conta com seções de experiência, habilidades e projetos, além de carregamento dinâmico de dados via JSON. O portfólio está em evolução contínua, incorporando melhorias de design e novas funcionalidades conforme o avanço na carreira.",
-      "category": "Portfólio",
-      "year": "2025",
-      "status": "Em evolução",
-      "thumbnail": "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/PortfólioPrint.png",
-        "./assets/imagens/ThumbProjetos/PortfólioPrint.png"
-      ],
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/danieldias.py"
-        },
-        {
-          "label": "Demonstração",
-          "url": "https://danieldpereira.github.io/danieldias.py/"
-        }
-      ]
-    },
-    {
-      "title": "Passeio do Cavalo",
-      "description": "Implementação em Python do clássico problema do Passeio do Cavalo, que percorre todas as casas de um tabuleiro de xadrez 8×8 sem repetição.",
-      "longDescription": "Solução algorítmica para o problema combinatório do Passeio do Cavalo utilizando backtracking com a heurística de Warnsdorff, que prioriza movimentos para casas com menos opções futuras. O programa exibe o trajeto em tempo real por meio de uma animação ASCII, evidenciando a lógica de busca e otimização aplicada.",
-      "category": "Algoritmos",
-      "year": "2024",
-      "status": "Concluído",
-      "thumbnail": "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
-      "images": [
-        "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true",
-        "https://github.com/DanielDPereira/PasseioDoCavalo/blob/main/Passeio%20do%20Cavalo%20GIF.gif?raw=true"
-      ],
-      "technologies": [
-        "Python",
-        "Algoritmos",
-        "Backtracking"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/PasseioDoCavalo"
-        }
-      ]
-    },
-    {
-      "title": "QR Code Generator",
-      "description": "Gerador de QR Code 100% client-side que cria códigos estáticos, gratuitos e sem expiração diretamente no navegador, sem envio de dados a servidores externos.",
-      "longDescription": "Aplicação web leve que utiliza a biblioteca qrcode.js para codificar URLs diretamente no QR Code, eliminando qualquer dependência de backend. O projeto prioriza privacidade e simplicidade: basta inserir o link, gerar o código e baixar a imagem. Apresenta interface limpa e responsiva com feedback visual imediato.",
-      "category": "Ferramenta web",
-      "year": "2025",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/QrCodeJS.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/QrCodeJS.png",
-        "./assets/imagens/ThumbProjetos/QrCodeJS.png"
-      ],
-      "technologies": [
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "qrcode.js"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/qr-code-generator"
-        },
-        {
-          "label": "Demonstração",
-          "url": "https://danieldpereira.github.io/qr-code-generator/"
-        },
-        {
-          "label": "Post LinkedIn",
-          "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_qrcode-desenvolvimentoweb-opensource-activity-7388308383453298688-gYP4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
-        }
-      ]
-    },
-    {
-      "title": "PalavrometrIA",
-      "description": "Analisador web de textos com PLN que extrai estatísticas linguísticas, palavras-chave, entidades nomeadas, legibilidade e gráficos — a partir de texto colado, URL ou arquivo.",
-      "longDescription": "Aplicação fullstack em Python/Flask que aplica uma pipeline completa de Processamento de Linguagem Natural com SpaCy. Aceita múltiplas fontes de entrada (texto, URL via BeautifulSoup e arquivos .txt/.pdf/.docx via PyMuPDF) e retorna um dashboard com contagem de palavras, distribuição gramatical (POS), frequência de termos, reconhecimento de entidades (NER), índice de legibilidade Gulpease e tempo estimado de leitura. Os resultados são visualizados com Chart.js e podem ser exportados como PDF via FPDF. Suporta textos em português e inglês com detecção automática de idioma.",
-      "category": "IA e NLP",
-      "year": "2025",
-      "status": "Concluído",
-      "thumbnail": "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
-      "images": [
-        "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true",
-        "https://github.com/DanielDPereira/PalavrometrIA/blob/main/PalavrometrIA%20GIF.gif?raw=true"
-      ],
-      "technologies": [
-        "Python",
-        "Flask",
-        "SpaCy",
-        "PyMuPDF",
-        "BeautifulSoup",
-        "JavaScript",
-        "Chart.js"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/PalavrometrIA"
-        },
-        {
-          "label": "Post LinkedIn",
-          "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_inteligaeanciaartificial-ia-pln-activity-7390191978845560832-YZrR/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
-        }
-      ]
-    },
-    {
-      "title": "JSON → TOON Converter (n8n)",
-      "description": "Workflow no n8n que converte estruturas JSON para o formato TOON, reduzindo o consumo de tokens e melhorando a qualidade de contexto em pipelines com agentes de IA.",
-      "longDescription": "Automação desenvolvida no n8n para transformar dados JSON verbosos no formato TOON (Text-Oriented Object Notation), uma representação mais compacta e eficiente para consumo por modelos de linguagem. O workflow é especialmente útil em pipelines de IA onde o contexto precisa ser denso em informação e econômico em tokens, contribuindo diretamente para a qualidade das respostas dos agentes e redução de custos de inferência.",
-      "category": "Automação e IA",
-      "year": "2025",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png",
-        "./assets/imagens/ThumbProjetos/JSON - TOON converter n8n.png"
-      ],
-      "technologies": [
-        "n8n",
-        "JSON",
-        "Automação",
-        "IA"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/n8n-json2toon-converter"
-        },
-        {
-          "label": "Post LinkedIn",
-          "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_n8n-tecnologia-inteligenciaartificial-activity-7394390940435767296-9Ydx?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
-        }
-      ]
-    },
-    {
-      "title": "Monitor de Juro Real (ETL Financeiro)",
-      "description": "Pipeline ETL em Python que coleta dados do Banco Central do Brasil, calcula o juro real da renda fixa e gera visualizações históricas para análise financeira.",
-      "longDescription": "Projeto de engenharia de dados que implementa as três etapas de um pipeline ETL: extração de indicadores financeiros via API pública do Banco Central (SELIC e IPCA), transformação e cálculo do juro real com Pandas, e carregamento dos resultados em visualizações interativas. O projeto demonstra domínio de coleta de dados de APIs REST, tratamento de séries temporais e apresentação de informações financeiras baseadas em dados públicos.",
-      "category": "Engenharia de Dados",
-      "year": "2025",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
-        "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
-      ],
-      "technologies": [
-        "Python",
-        "ETL",
-        "API Banco Central",
-        "Pandas",
-        "Data Visualization"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/etl-juro-real-brasil"
-        },
-        {
-          "label": "Post LinkedIn",
-          "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_python-datascience-financas-activity-7419545810574655488-BpFf?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
-        }
-      ]
-    },
-    {
-      "title": "Crypto Miner Pulse",
-      "description": "Dashboard web interativo para monitoramento em tempo real de mineração de criptomoedas, consumindo a API local do XMRig e exibindo métricas operacionais em painéis visuais.",
-      "longDescription": "Aplicação orientada a observabilidade que se conecta à API REST do minerador XMRig e apresenta métricas como hashrate, aceitações, rejeições, uso de CPU e histórico de desempenho em dashboards dinâmicos. O projeto demonstra integração com APIs locais, atualização em tempo real sem frameworks pesados e boas práticas de visualização de dados para apoio à tomada de decisão.",
-      "category": "Dashboard de Dados",
-      "year": "2025",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png",
-        "./assets/imagens/ThumbProjetos/CryptoMinerPulse.png"
-      ],
-      "technologies": [
-        "JavaScript",
-        "Dashboard",
-        "API",
-        "Visualização de dados"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/crypto-miner-pulse"
-        },
-        {
-          "label": "Demonstração",
-          "url": "https://danieldpereira.github.io/crypto-miner-pulse/"
-        },
-        {
-          "label": "Post LinkedIn",
-          "url": "https://www.linkedin.com/posts/daniel-dias-pereira-40219425b_dataanalytics-dashboard-webdevelopment-activity-7427096690605649920-bj0s?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_rskIBOR5Xc7stS6r5cqLhjkPNOO6Tqjo"
-        }
-      ]
-    },
-    {
-      "title": "ipynbCleaner (PyPI Package)",
-      "description": "Ferramenta e pacote Python publicado no PyPI para limpeza e otimização de arquivos Jupyter Notebook (.ipynb) para compartilhamento eficiente com LLMs.",
-      "longDescription": "Biblioteca Python desenvolvida e publicada no PyPI (ipynbcleaner) que otimiza arquivos Jupyter Notebook (.ipynb) removendo metadados e saídas volumosas, preservando a estrutura de código e documentação para integração econômica com modelos de linguagem e agentes de IA.",
-      "category": "Ferramenta & Biblioteca",
-      "year": "2026",
-      "status": "Publicado no PyPI",
-      "thumbnail": "https://raw.githubusercontent.com/DanielDPereira/ipynbCleaner/main/docs/assets/banner.png",
-      "images": [
-        "https://raw.githubusercontent.com/DanielDPereira/ipynbCleaner/main/docs/assets/banner.png"
-      ],
-      "technologies": [
-        "Python",
-        "PyPI",
-        "Jupyter",
-        "LLMs",
-        "CLI"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/ipynbCleaner"
-        },
-        {
-          "label": "PyPI Package",
-          "url": "https://pypi.org/project/ipynbcleaner/"
-        }
-      ]
-    },
-    {
-      "title": "Brasil na Copa AI (RAG Chatbot)",
-      "description": "Chatbot com IA e RAG (Retrieval-Augmented Generation) para responder sobre o histórico e estatísticas da seleção brasileira em Copas do Mundo.",
-      "longDescription": "Aplicação desenvolvida em Python que utiliza a arquitetura RAG (Retrieval-Augmented Generation) com LangChain e a API do Google Gemini para realizar consultas semânticas e estatísticas sobre a trajetória da Seleção Brasileira de Futebol em Copas do Mundo.",
-      "category": "IA e NLP",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "https://raw.githubusercontent.com/DanielDPereira/BrasilnaCopaAI/main/assets/thumb.png",
-      "images": [
-        "https://raw.githubusercontent.com/DanielDPereira/BrasilnaCopaAI/main/assets/thumb.png"
-      ],
-      "technologies": [
-        "Python",
-        "LangChain",
-        "RAG",
-        "Gemini API",
-        "LLMs"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/BrasilnaCopaAI"
-        }
-      ]
-    },
-    {
-      "title": "FII Monitor (Gestão de FIIs)",
-      "description": "Gerenciador de carteiras de Fundos de Investimento Imobiliário (FIIs) com análise de dividendos, cotações e métricas da B3 via yfinance.",
-      "longDescription": "Aplicação em Python direcionada ao mercado financeiro para acompanhamento e gestão de carteiras de FIIs negociados na B3. Coleta cotações em tempo real via yfinance, calcula indicadores de rentabilidade e projeta rendimentos com dashboards visuais.",
-      "category": "Finanças e Dados",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
-      ],
-      "technologies": [
-        "Python",
-        "yfinance",
-        "B3",
-        "Pandas",
-        "Financial Analysis"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/FII-Monitor"
-        }
-      ]
-    },
-    {
-      "title": "Gerenciador de Usuários JavaFX & MySQL",
-      "description": "Sistema desktop em Java com JavaFX e MySQL para administração de usuários, aplicando POO, padrão DAO e criptografia BCrypt.",
-      "longDescription": "Aplicação desktop robusta desenvolvida em Java como estudo de Programação Orientada a Objetos (POO). Implementa padrão CRUD completo, arquitetura em camadas (DAO), interface gráfica moderna em JavaFX e armazenamento seguro de credenciais com BCrypt e banco MySQL.",
-      "category": "Projeto Acadêmico",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/API1Semestre.png"
-      ],
-      "technologies": [
-        "Java",
-        "JavaFX",
-        "MySQL",
-        "POO",
-        "BCrypt"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/CRUD-users-JavaFX"
-        }
-      ]
-    },
-    {
-      "title": "Balancify (Estruturador Patrimonial)",
-      "description": "Plataforma em Python para estruturação e análise de balanço patrimonial com relatórios dinâmicos e indicadores econômicos.",
-      "longDescription": "Sistema de gestão financeira pessoal e empresarial que automatiza a organização de ativos, passivos e patrimônio líquido. Apresenta cálculo dinâmico de liquidez, estrutura de capital e indicadores financeiros amigáveis.",
-      "category": "Finanças e Dados",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/ETL Juro Real.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/ETL Juro Real.png"
-      ],
-      "technologies": [
-        "Python",
-        "Pandas",
-        "Financial Analysis",
-        "Data Analytics"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/Balancify"
-        }
-      ]
-    },
-    {
-      "title": "PDF OCR Reader",
-      "description": "Sistema de extração e reconhecimento óptico de caracteres (OCR) em arquivos PDF digitalizados utilizando Tesseract e Python.",
-      "longDescription": "Pipeline de engenharia de dados em Python voltado para OCR (Optical Character Recognition). Processa documentos digitalizados em PDF, aplica algoritmos de tratamento de imagem e extrai textos não estruturados utilizando Tesseract OCR.",
-      "category": "Engenharia de Dados",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/PalavrometrIA.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/PalavrometrIA.png"
-      ],
-      "technologies": [
-        "Python",
-        "Tesseract OCR",
-        "OpenCV",
-        "PDF Processing"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/pdf_ocr_reader"
-        }
-      ]
-    },
-    {
-      "title": "Aerocode — Gestão de Aeronaves",
-      "description": "Sistema em linha de comando (CLI) em TypeScript para controle de produção de aeronaves, com princípios avançados de POO.",
-      "longDescription": "Aplicação desenvolvida em TypeScript para gerenciamento de processos e peças na produção aeronáutica (Aerocode). Projeto acadêmico de POO da Fatec SJC aplicando conceitos de encapsulamento, herança, polimorfismo e design patterns.",
-      "category": "Projeto Acadêmico",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "./assets/imagens/ThumbProjetos/API1Semestre.png",
-      "images": [
-        "./assets/imagens/ThumbProjetos/API1Semestre.png"
-      ],
-      "technologies": [
-        "TypeScript",
-        "POO",
-        "Node.js",
-        "CLI"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/AV1"
-        }
-      ]
-    },
-    {
-      "title": "XGBoost ParamTuner (Previsões TAF)",
-      "description": "Dashboard interativo para ajuste e análise de hiperparâmetros de modelos XGBoost em dados meteorológicos TAF.",
-      "longDescription": "Aplicação web focada em Data Science e Meteorologia. Permite ajustar e visualizar o desempenho de hiperparâmetros do algoritmo XGBoost aplicados a previsões meteorológicas TAF com gráficos e painéis de avaliação.",
-      "category": "Dashboard & Data Science",
-      "year": "2026",
-      "status": "Concluído",
-      "thumbnail": "https://raw.githubusercontent.com/DanielDPereira/xgboost-paramTuner-projTAF/main/assets/preview.png",
-      "images": [
-        "https://raw.githubusercontent.com/DanielDPereira/xgboost-paramTuner-projTAF/main/assets/preview.png"
-      ],
-      "technologies": [
-        "JavaScript",
-        "XGBoost",
-        "Data Visualization",
-        "Meteorologia"
-      ],
-      "links": [
-        {
-          "label": "Repositório",
-          "url": "https://github.com/DanielDPereira/xgboost-paramTuner-projTAF"
-        },
-        {
-          "label": "Demonstração",
-          "url": "https://danieldpereira.github.io/xgboost-paramTuner-projTAF/"
-        }
-      ]
-    }
-  ]
 }
