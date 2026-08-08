@@ -40,16 +40,20 @@ def is_image_field(key_name, val=None):
     return False
 
 
-def fetch_and_resize_image(img_source: str, max_size=(200, 130)):
-    if not Image or not ImageTk:
+PIL_CACHE = {}
+PHOTO_CACHE = {}
+
+
+def load_pil_image(img_source: str, max_size=(200, 130)):
+    if not Image:
         return None, "PIL indisponível"
     if not img_source or not isinstance(img_source, str):
         return None, "Caminho inválido"
 
     img_source = img_source.strip()
     cache_key = (img_source, max_size)
-    if cache_key in IMAGE_CACHE:
-        return IMAGE_CACHE[cache_key], None
+    if cache_key in PIL_CACHE:
+        return PIL_CACHE[cache_key], None
 
     try:
         if img_source.startswith("http://") or img_source.startswith("https://"):
@@ -65,14 +69,13 @@ def fetch_and_resize_image(img_source: str, max_size=(200, 130)):
                 return None, f"Não encontrado: {img_source}"
             raw_img = Image.open(local_path)
 
-        if raw_img.mode in ("P", "1"):
+        if raw_img.mode in ("P", "1", "CMYK"):
             raw_img = raw_img.convert("RGBA")
 
         img_copy = raw_img.copy()
         img_copy.thumbnail(max_size, Image.Resampling.LANCZOS)
-        photo = ImageTk.PhotoImage(img_copy)
-        IMAGE_CACHE[cache_key] = photo
-        return photo, None
+        PIL_CACHE[cache_key] = img_copy
+        return img_copy, None
     except Exception as e:
         return None, str(e)
 
@@ -83,14 +86,26 @@ def update_image_preview(label_widget, img_source, max_size=(200, 130)):
         label_widget.image = None
         return
 
+    img_source = img_source.strip()
+    cache_key = (img_source, max_size)
+
+    if cache_key in PHOTO_CACHE:
+        photo = PHOTO_CACHE[cache_key]
+        label_widget.config(image=photo, text="", width="", height="")
+        label_widget.image = photo
+        return
+
     label_widget.config(text="⌛ Carregando...", image="")
 
     def _loader():
-        photo, err = fetch_and_resize_image(img_source, max_size=max_size)
+        pil_img, err = load_pil_image(img_source, max_size=max_size)
 
         def _apply():
             try:
-                if photo:
+                if pil_img and ImageTk:
+                    if cache_key not in PHOTO_CACHE:
+                        PHOTO_CACHE[cache_key] = ImageTk.PhotoImage(pil_img)
+                    photo = PHOTO_CACHE[cache_key]
                     label_widget.config(image=photo, text="", width="", height="")
                     label_widget.image = photo
                 else:
