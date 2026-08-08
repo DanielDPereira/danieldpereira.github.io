@@ -323,21 +323,46 @@ def build_json_ld(profile: Dict[str, Any]) -> str:
 
 
 def replace_container_content(html_content: str, element_id: str, new_inner_html: str) -> str:
-    """Substitui o conteúdo interno do elemento com o id especificado mantendo a tag intacta."""
+    """Substitui o conteúdo interno do elemento com o id especificado respeitando tags aninhadas."""
     pattern = re.compile(
-        rf'(<([a-z0-9]+)\b[^>]*\bid=["\']{re.escape(element_id)}["\'][^>]*>)(.*?)(</\2>)',
-        re.DOTALL | re.IGNORECASE,
+        rf'(<([a-z0-9]+)\b[^>]*\bid=["\']{re.escape(element_id)}["\'][^>]*>)',
+        re.IGNORECASE,
     )
-    
-    def replacer(match):
-        open_tag = match.group(1)
-        close_tag = match.group(4)
-        if new_inner_html.strip():
-            return f"{open_tag}\n        {new_inner_html.strip()}\n      {close_tag}"
-        else:
-            return f"{open_tag}{close_tag}"
+    match = pattern.search(html_content)
+    if not match:
+        return html_content
 
-    return pattern.sub(replacer, html_content)
+    start_idx = match.end()
+    tag_name = match.group(2).lower()
+
+    # Procura a tag de fechamento correspondente respeitando aninhamentos
+    depth = 1
+    pos = start_idx
+    open_tag_regex = re.compile(rf'<{tag_name}\b', re.IGNORECASE)
+    close_tag_regex = re.compile(rf'</{tag_name}\s*>', re.IGNORECASE)
+
+    while depth > 0 and pos < len(html_content):
+        next_open = open_tag_regex.search(html_content, pos)
+        next_close = close_tag_regex.search(html_content, pos)
+
+        if not next_close:
+            break
+
+        if next_open and next_open.start() < next_close.start():
+            depth += 1
+            pos = next_open.end()
+        else:
+            depth -= 1
+            if depth == 0:
+                end_idx = next_close.start()
+                if new_inner_html.strip():
+                    formatted = f"\n        {new_inner_html.strip()}\n      "
+                else:
+                    formatted = ""
+                return html_content[:start_idx] + formatted + html_content[end_idx:]
+            pos = next_close.end()
+
+    return html_content
 
 
 def generate_sitemap(portfolio_path: Path, output_path: Path):
