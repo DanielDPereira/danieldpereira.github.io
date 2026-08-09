@@ -4,6 +4,7 @@ import { safeText } from '../utils/text.js';
 export function renderExperiences(experiences) {
   const container = document.getElementById('experience-list');
   if (!container || !Array.isArray(experiences)) return;
+  if (container.children.length > 0) return;
 
   container.innerHTML = experiences
     .map((item) => {

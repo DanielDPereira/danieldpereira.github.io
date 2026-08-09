@@ -24,19 +24,26 @@ export function renderProjects(projects) {
   const container = document.getElementById('projects-grid');
   if (!container || !Array.isArray(projects)) return;
 
-  container.innerHTML = projects.map((project, index) => buildProjectCard(project, index)).join('');
+  // Se o contêiner estiver vazio, renderiza o HTML dos projetos
+  if (container.children.length === 0) {
+    container.innerHTML = projects.map((project, index) => buildProjectCard(project, index)).join('');
+  }
 
-  container.addEventListener('click', (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement)) return;
+  // Hidrata a escuta de cliques do modal sem duplicar listeners
+  if (!container.dataset.hydrated) {
+    container.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
 
-    const trigger = target.closest('[data-project-index]');
-    if (!(trigger instanceof HTMLElement)) return;
+      const trigger = target.closest('[data-project-index]');
+      if (!(trigger instanceof HTMLElement)) return;
 
-    const index = Number(trigger.dataset.projectIndex);
-    const selectedProject = projects[index];
-    if (selectedProject) {
-      openProjectModal(selectedProject);
-    }
-  });
+      const index = Number(trigger.dataset.projectIndex);
+      const selectedProject = projects[index];
+      if (selectedProject) {
+        openProjectModal(selectedProject);
+      }
+    });
+    container.dataset.hydrated = 'true';
+  }
 }

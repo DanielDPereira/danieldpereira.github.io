@@ -10,6 +10,11 @@ import { renderSkills } from './ui/skills.js';
 import { loadPortfolioData } from './services/portfolio-data-service.js';
 
 async function bootstrapPortfolio() {
+  // Inicializa imediatamente interatividade e animações no HTML pré-renderizado
+  applyRevealAttributes();
+  initScrollReveal();
+  attachGlobalEvents();
+
   try {
     const data = await loadPortfolioData();
 
@@ -20,11 +25,12 @@ async function bootstrapPortfolio() {
     renderSkills(data.skills);
     renderProjects(data.projects);
     renderCertificates(data.certificates);
+
+    // Re-aplica seletores de animação caso novos elementos tenham sido renderizados
     applyRevealAttributes();
     initScrollReveal();
-    attachGlobalEvents();
   } catch (error) {
-    console.error('Falha ao carregar dados do portfólio:', error);
+    console.warn('Usando conteúdo pré-renderizado estático (JSON offline ou não carregado):', error);
   }
 }
 

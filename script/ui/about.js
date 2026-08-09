@@ -3,6 +3,7 @@ import { safeText } from '../utils/text.js';
 export function renderAbout(about) {
   const container = document.getElementById('about-content');
   if (!container || !about) return;
+  if (container.children.length > 0) return;
 
   const paragraphs = Array.isArray(about.paragraphs)
     ? about.paragraphs.map((text) => `<p>${safeText(text)}</p>`).join('')
