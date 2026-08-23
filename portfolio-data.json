@@ -137,87 +137,87 @@
         }
     ],
     "certificates": [
-        {
-            "title": "Competência Transversal - Tecnologia da Informação e Comunicação - SENAI",
-            "url": "http://www.sp.senai.br/consulta-certificado?qrcode=00010478/6712116"
-        },
-        {
-            "title": "Encontro Regional Anual do PIC e do ONE - SP04 2022",
-            "url": "https://drive.google.com/file/d/16FakTBZZqbfa8gE7ZyFyLfRq100oKGel/view?usp=share_link"
-        },
-        {
-            "title": "Maratona de Programação VI Edição da Kenzie",
-            "url": "https://drive.google.com/file/d/1yBaD5ad9JnqAwBnejvza_3BmcOVjYPPx/view?usp=share_link"
-        },
-        {
-            "title": "Participação no 16º PIC",
-            "url": "https://drive.google.com/file/d/1iYMNokxEIFOqpgc76WFi-XHYPmt5FDwK/view?usp=share_link"
-        },
-        {
-            "title": "CC50: Introdução à Ciência da Computação - O Curso de Harvard, no Brasil",
-            "url": "https://drive.google.com/file/d/14ySJ7f_5g_fUevcx3v0rHkoO92iPJ04a/view?usp=sharing"
-        },
-        {
-            "title": "Desenvolvimento de equipes - Senado",
-            "url": "https://drive.google.com/file/d/1Z3Jb3jn9teZcVN5s8L9t9ZlFfrRbZote/view?usp=sharing"
-        },
-        {
-            "title": "Bootcamp Desenvolvimento de Aplicação Web - Inteli",
-            "url": "https://drive.google.com/file/d/1YJOFE0rOC6SxM0_LzeuhWs_vVhntBlZ7/view"
-        },
-        {
-            "title": "Introdução à programação com Python - Santander Open Academy",
-            "url": "https://drive.google.com/file/d/1yhR7lAjYWfLMDHMvll8q5aTRNYxl-PGt/view?usp=sharing"
-        },
-        {
-            "title": "Introdução à Ciência de Dados - Santander Open Academy",
-            "url": "https://drive.google.com/file/d/1VmdBarKNdG-xH-QUT6d8LrPCE-FHMR7D/view?usp=sharing"
-        },
-        {
-            "title": "Curso EAD Python Básico 40h - Cephas - Centro de Educação Profissional",
-            "url": "https://drive.google.com/file/d/1pTu7KlhFlnTlW_EBZ2tnwfc_AFDIZ391/view?usp=sharing"
-        },
-        {
-            "title": "Build with AI 2025 - GDG São José dos Campos",
-            "url": "https://media.licdn.com/dms/image/v2/D4D2DAQHxxpGG_0wlHg/profile-treasury-image-shrink_8192_8192/B4DZcza2.yHMAg-/0/1748914368890?e=1763478000&v=beta&t=eBZdsMz0VLzLP8Xo56Xmxe1IbO9X0_cCwiUZDurMTac"
-        },
-        {
-            "title": "Prompting Responsável: Maximizar a IA no seu negócio - Santander Open Academy",
-            "url": "https://drive.google.com/file/d/1LPT1Lpdqo_zmu-uugGqi_GuCixsDhUlL/view?usp=sharing"
-        },
-        {
-            "title": "Competência Transversal - Lógica de programação - SENAI",
-            "url": "https://drive.google.com/file/d/1MbCMY4GaxTL3IolAzl2rINyP-LOicYIF/view?usp=sharing"
-        },
-        {
-            "title": "Semana da Jornada de Dados - Pipeline Completa de Dados: Python, SQL e n8n - Jornada de Dados",
-            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7362271287760633856/"
-        },
-        {
-            "title": "VS Code Dev Days - Github Community São José dos Campos",
-            "url": "https://media.licdn.com/dms/image/v2/D4D2DAQE1xxaSZ_EOIA/profile-treasury-image-shrink_800_800/B4DZmmtbduH4AY-/0/1759438551445?e=1763478000&v=beta&t=jGsj0WZqT0MvhMZyel_dt2tfvDjat8tSnrE3ew8HCRE"
-        },
-        {
-            "title": "Modelagem de Dados - Fundação Bradesco",
-            "url": "https://drive.google.com/file/d/1_JCxEP9rU8SWsqhYeiM0NqOCQy_hPQkH/view?usp=sharing"
-        },
-        {
-            "title": "INTRODUÇÃO À PROGRAMAÇÃO ORIENTADA A OBJETOS (POO) - Fundação Bradesco",
-            "url": "#"
-        },
-        {
-            "title": "Fundamentos do ChatGPT - Santander Open Academy",
-            "url": "https://drive.google.com/file/d/1oPpWLJZyHKSLbAQrhqX1rYKw29yHYrsm/view?usp=sharing"
-        },
-        {
-            "title": "Bootcamp Santander 2025 - Ciência de Dados com Python - DIO / Santander Open Academy",
-            "url": "https://www.dio.me/certificate/LC6L9RUH/share"
-        },
-        {
-            "title": "IA na prática: como dados bem estruturados fazem a diferença - Fundação Bradesco",
-            "url": "#"
-        }
-    ],
+    {
+        "title": "IA na prática: como dados bem estruturados fazem a diferença - Fundação Bradesco",
+        "url": "#"
+    },
+    {
+        "title": "Bootcamp Santander 2025 - Ciência de Dados com Python - DIO / Santander Open Academy",
+        "url": "https://www.dio.me/certificate/LC6L9RUH/share"
+    },
+    {
+        "title": "Fundamentos do ChatGPT - Santander Open Academy",
+        "url": "https://drive.google.com/file/d/1oPpWLJZyHKSLbAQrhqX1rYKw29yHYrsm/view?usp=sharing"
+    },
+    {
+        "title": "INTRODUÇÃO À PROGRAMAÇÃO ORIENTADA A OBJETOS (POO) - Fundação Bradesco",
+        "url": "#"
+    },
+    {
+        "title": "Modelagem de Dados - Fundação Bradesco",
+        "url": "https://drive.google.com/file/d/1_JCxEP9rU8SWsqhYeiM0NqOCQy_hPQkH/view?usp=sharing"
+    },
+    {
+        "title": "VS Code Dev Days - Github Community São José dos Campos",
+        "url": "https://media.licdn.com/dms/image/v2/D4D2DAQE1xxaSZ_EOIA/profile-treasury-image-shrink_800_800/B4DZmmtbduH4AY-/0/1759438551445?e=1763478000&v=beta&t=jGsj0WZqT0MvhMZyel_dt2tfvDjat8tSnrE3ew8HCRE"
+    },
+    {
+        "title": "Semana da Jornada de Dados - Pipeline Completa de Dados: Python, SQL e n8n - Jornada de Dados",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7362271287760633856/"
+    },
+    {
+        "title": "Competência Transversal - Lógica de programação - SENAI",
+        "url": "https://drive.google.com/file/d/1MbCMY4GaxTL3IolAzl2rINyP-LOicYIF/view?usp=sharing"
+    },
+    {
+        "title": "Prompting Responsável: Maximizar a IA no seu negócio - Santander Open Academy",
+        "url": "https://drive.google.com/file/d/1LPT1Lpdqo_zmu-uugGqi_GuCixsDhUlL/view?usp=sharing"
+    },
+    {
+        "title": "Build with AI 2025 - GDG São José dos Campos",
+        "url": "https://media.licdn.com/dms/image/v2/D4D2DAQHxxpGG_0wlHg/profile-treasury-image-shrink_8192_8192/B4DZcza2.yHMAg-/0/1748914368890?e=1763478000&v=beta&t=eBZdsMz0VLzLP8Xo56Xmxe1IbO9X0_cCwiUZDurMTac"
+    },
+    {
+        "title": "Curso EAD Python Básico 40h - Cephas - Centro de Educação Profissional",
+        "url": "https://drive.google.com/file/d/1pTu7KlhFlnTlW_EBZ2tnwfc_AFDIZ391/view?usp=sharing"
+    },
+    {
+        "title": "Introdução à Ciência de Dados - Santander Open Academy",
+        "url": "https://drive.google.com/file/d/1VmdBarKNdG-xH-QUT6d8LrPCE-FHMR7D/view?usp=sharing"
+    },
+    {
+        "title": "Introdução à programação com Python - Santander Open Academy",
+        "url": "https://drive.google.com/file/d/1yhR7lAjYWfLMDHMvll8q5aTRNYxl-PGt/view?usp=sharing"
+    },
+    {
+        "title": "Bootcamp Desenvolvimento de Aplicação Web - Inteli",
+        "url": "https://drive.google.com/file/d/1YJOFE0rOC6SxM0_LzeuhWs_vVhntBlZ7/view"
+    },
+    {
+        "title": "Desenvolvimento de equipes - Senado",
+        "url": "https://drive.google.com/file/d/1Z3Jb3jn9teZcVN5s8L9t9ZlFfrRbZote/view?usp=sharing"
+    },
+    {
+        "title": "CC50: Introdução à Ciência da Computação - O Curso de Harvard, no Brasil",
+        "url": "https://drive.google.com/file/d/14ySJ7f_5g_fUevcx3v0rHkoO92iPJ04a/view?usp=sharing"
+    },
+    {
+        "title": "Participação no 16º PIC",
+        "url": "https://drive.google.com/file/d/1iYMNokxEIFOqpgc76WFi-XHYPmt5FDwK/view?usp=share_link"
+    },
+    {
+        "title": "Maratona de Programação VI Edição da Kenzie",
+        "url": "https://drive.google.com/file/d/1yBaD5ad9JnqAwBnejvza_3BmcOVjYPPx/view?usp=share_link"
+    },
+    {
+        "title": "Encontro Regional Anual do PIC e do ONE - SP04 2022",
+        "url": "https://drive.google.com/file/d/16FakTBZZqbfa8gE7ZyFyLfRq100oKGel/view?usp=share_link"
+    },
+    {
+        "title": "Competência Transversal - Tecnologia da Informação e Comunicação - SENAI",
+        "url": "http://www.sp.senai.br/consulta-certificado?qrcode=00010478/6712116"
+    }
+],
     "skills": [
         {
             "name": "Python",
