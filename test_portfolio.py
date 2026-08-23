@@ -104,6 +104,25 @@ class TestBuildHTMLGenerators(unittest.TestCase):
         for item in self.data["certificates"]:
             self.assertIn(html.escape(item["title"]), html_out)
 
+    def test_chronological_descending_order(self):
+        """Verifica se experiências, formação, projetos e certificados seguem ordem decrescente (mais recente primeiro)."""
+        # Experiências: Atual/Nov 2025 antes de Abr 2025
+        self.assertIn("Atual", self.data["experiences"][0].get("period", ""))
+        self.assertIn("2025", self.data["experiences"][-1].get("period", ""))
+
+        # Formação: Graduação FATEC (2025-2027) antes de PIC Jr. (2022)
+        self.assertIn("Fatec", self.data["education"][0].get("institution", ""))
+        self.assertIn("OBMEP", self.data["education"][-1].get("institution", ""))
+
+        # Projetos: 2026 no topo (Brasil na Copa AI) e 2023 na base (API 1º Semestre)
+        self.assertEqual(self.data["projects"][0]["year"], "2026")
+        self.assertEqual(self.data["projects"][-1]["year"], "2023")
+        self.assertEqual(self.data["projects"][0]["title"], "Brasil na Copa AI (RAG Chatbot)")
+        self.assertEqual(self.data["projects"][-1]["title"], "Sistema de gestão de atestados e avaliação Scrum")
+
+        # Certificados: 2022 no final
+        self.assertIn("SENAI", self.data["certificates"][-1].get("title", ""))
+
 
 class TestSEOAndMetadata(unittest.TestCase):
     def setUp(self):
@@ -179,6 +198,44 @@ class TestBuildPipelineAndIdempotency(unittest.TestCase):
         self.assertEqual(index_run1, index_run2, "Executar o build duas vezes deve produzir o index.html exatamente idêntico.")
         self.assertEqual(sitemap_run1, sitemap_run2, "Executar o build duas vezes deve produzir o sitemap.xml exatamente idêntico.")
         self.assertEqual(robots_run1, robots_run2, "Executar o build duas vezes deve produzir o robots.txt exatamente idêntico.")
+
+
+class TestProjectThumbnailsStructure(unittest.TestCase):
+    def setUp(self):
+        with open("portfolio-data.json", "r", encoding="utf-8") as f:
+            self.data = json.load(f)
+        self.thumbs_dir = Path("assets/imagens/ThumbProjetos")
+
+    def test_no_loose_files_in_thumb_projetos(self):
+        """Garante que a raiz de ThumbProjetos contenha apenas pastas de projetos, sem arquivos soltos."""
+        self.assertTrue(self.thumbs_dir.exists(), "O diretório ThumbProjetos deve existir.")
+        loose_files = [f.name for f in self.thumbs_dir.iterdir() if f.is_file()]
+        self.assertEqual(loose_files, [], f"Não deve haver arquivos soltos na raiz de ThumbProjetos: {loose_files}")
+
+    def test_all_local_project_images_exist_in_subfolders(self):
+        """Verifica se todas as imagens locais apontam para arquivos existentes dentro de subpastas."""
+        for project in self.data.get("projects", []):
+            title = project.get("title", "")
+            all_imgs = [project.get("thumbnail")] + project.get("images", [])
+            for img in all_imgs:
+                if not img or img == "." or img.startswith("http://") or img.startswith("https://"):
+                    continue
+                clean_path = img.lstrip("./")
+                file_path = Path(clean_path)
+                self.assertTrue(
+                    file_path.exists(),
+                    f"A imagem '{img}' do projeto '{title}' não foi encontrada no disco."
+                )
+                # Verifica se está dentro de uma subpasta de ThumbProjetos
+                self.assertTrue(
+                    "ThumbProjetos/" in img.replace("\\", "/"),
+                    f"A imagem '{img}' do projeto '{title}' deve estar dentro de ThumbProjetos/."
+                )
+                parts = img.split("ThumbProjetos/")[-1].replace("\\", "/").split("/")
+                self.assertGreaterEqual(
+                    len(parts), 2,
+                    f"A imagem '{img}' do projeto '{title}' deve estar em uma subpasta dedicada de projeto."
+                )
 
 
 if __name__ == "__main__":

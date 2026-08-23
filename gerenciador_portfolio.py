@@ -6,6 +6,8 @@ import shutil
 import threading
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
+import re
+import unicodedata
 import urllib.request
 
 try:
@@ -30,13 +32,56 @@ IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg")
 TARGET_IMAGE_DIR = Path.cwd() / "assets" / "imagens" / "ThumbProjetos"
 
 
-def import_image_files(multiple=False):
+def slugify_folder_name(name: str) -> str:
+    """Gera um nome de pasta seguro em formato slug a partir do título do projeto."""
+    if not name or not isinstance(name, str):
+        return "projeto"
+    name_clean = name.split("(")[0].strip()
+    normalized = unicodedata.normalize("NFKD", name_clean).encode("ASCII", "ignore").decode("ASCII")
+    slug = re.sub(r"[^a-zA-Z0-9_\-]+", "-", normalized).strip("-").lower()
+    return slug or "projeto"
+
+
+def get_project_folder_from_context(data_dict: dict) -> str:
+    """Retorna o nome da subpasta do projeto baseado nos caminhos existentes ou título."""
+    if not isinstance(data_dict, dict):
+        return ""
+
+    thumb = data_dict.get("thumbnail", "")
+    if thumb and isinstance(thumb, str) and "ThumbProjetos/" in thumb:
+        parts = thumb.split("ThumbProjetos/")[-1].replace("\\", "/").split("/")
+        if len(parts) > 1 and parts[0]:
+            return parts[0]
+
+    images = data_dict.get("images", [])
+    if isinstance(images, list) and images:
+        for img in images:
+            if isinstance(img, str) and "ThumbProjetos/" in img:
+                parts = img.split("ThumbProjetos/")[-1].replace("\\", "/").split("/")
+                if len(parts) > 1 and parts[0]:
+                    return parts[0]
+
+    title = data_dict.get("title", "")
+    if title:
+        return slugify_folder_name(title)
+
+    return ""
+
+
+def import_image_files(multiple=False, subfolder=None):
     """
     Abre o diálogo nativo do SO para escolher arquivo(s) de imagem,
-    copia automaticamente para assets/imagens/ThumbProjetos/
-    e retorna lista de caminhos relativos no formato ./assets/imagens/ThumbProjetos/nome.ext
+    copia automaticamente para assets/imagens/ThumbProjetos/<subfolder>/ (se subfolder informada)
+    ou assets/imagens/ThumbProjetos/ e retorna lista de caminhos relativos.
     """
-    TARGET_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+    if subfolder:
+        target_dir = TARGET_IMAGE_DIR / subfolder
+        rel_prefix = f"./assets/imagens/ThumbProjetos/{subfolder}"
+    else:
+        target_dir = TARGET_IMAGE_DIR
+        rel_prefix = "./assets/imagens/ThumbProjetos"
+
+    target_dir.mkdir(parents=True, exist_ok=True)
     filetypes = [
         ("Imagens", "*.png *.jpg *.jpeg *.webp *.gif *.svg"),
         ("Todos os arquivos", "*.*")
@@ -54,10 +99,10 @@ def import_image_files(multiple=False):
     for src in selected_files:
         src_path = Path(src)
         if not src_path.exists(): continue
-        dst_path = TARGET_IMAGE_DIR / src_path.name
+        dst_path = target_dir / src_path.name
         try:
             shutil.copy2(src_path, dst_path)
-            rel_path = f"./assets/imagens/ThumbProjetos/{src_path.name}"
+            rel_path = f"{rel_prefix}/{src_path.name}"
             rel_paths.append(rel_path)
         except Exception as e:
             messagebox.showerror("Erro ao Copiar Imagem", f"Não foi possível copiar '{src_path.name}':\n{e}")
@@ -441,7 +486,7 @@ class PortfolioCRUDApp:
         
         tk.Button(btn_frame1, text="➕ Novo", bg=FOCUS_COLOR, fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
                   activebackground="#2980b9", activeforeground="white", pady=5,
-                  command=lambda: self.add_top_list_item(section_key, refresh_listbox)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 2))
+                  command=lambda: self.add_top_list_item(section_key, listbox, refresh_listbox, refresh_right_frame)).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 2))
         
         tk.Button(btn_frame1, text="🗑️ Excluir", bg="#eb3b5a", fg="white", relief="flat", cursor="hand2", font=("Segoe UI", 10, "bold"),
                   activebackground="#fc5c65", activeforeground="white", pady=5,
@@ -486,10 +531,18 @@ class PortfolioCRUDApp:
         listbox.see(idx + 1)
         listbox.event_generate("<<ListboxSelect>>")
 
-    def add_top_list_item(self, section_key, refresh_callback):
+    def add_top_list_item(self, section_key, listbox=None, refresh_listbox_cb=None, refresh_right_cb=None):
         template = TEMPLATES.get(section_key, {"title": "Novo Item"}).copy()
-        self.data[section_key].append(template)
-        refresh_callback()
+        self.data[section_key].insert(0, template)
+        self.current_selections[section_key] = 0
+        if refresh_listbox_cb:
+            refresh_listbox_cb()
+        if listbox:
+            listbox.selection_clear(0, tk.END)
+            listbox.selection_set(0)
+            listbox.see(0)
+        if refresh_right_cb:
+            refresh_right_cb()
 
     def delete_top_list_item(self, section_key, listbox, refresh_callback, right_inner_frame):
         selection = listbox.curselection()
@@ -531,7 +584,8 @@ class PortfolioCRUDApp:
                         gallery_frame.pack(fill=tk.X, expand=True, pady=(5, 0))
 
                         def upload_multi_images(k=key, w=txt, d=data_dict, gframe=gallery_frame):
-                            new_paths = import_image_files(multiple=True)
+                            subfolder = get_project_folder_from_context(d)
+                            new_paths = import_image_files(multiple=True, subfolder=subfolder)
                             if new_paths:
                                 cur = [l.strip() for l in w.get("1.0", tk.END).split('\n') if l.strip()]
                                 for p in new_paths:
@@ -609,7 +663,8 @@ class PortfolioCRUDApp:
                         pbox.pack(side=tk.RIGHT, padx=(10, 0))
 
                         def upload_single_image(*args, k=key, vref=var, d=data_dict):
-                            new_paths = import_image_files(multiple=False)
+                            subfolder = get_project_folder_from_context(d)
+                            new_paths = import_image_files(multiple=False, subfolder=subfolder)
                             if new_paths:
                                 vref.set(new_paths[0])
                                 d[k] = new_paths[0]
@@ -658,7 +713,8 @@ class PortfolioCRUDApp:
                     pbox.pack(side=tk.RIGHT, padx=(5, 0))
 
                     def upload_nested_image(*args, kref=k, vref=var, itemref=item_dict):
-                        new_paths = import_image_files(multiple=False)
+                        subfolder = get_project_folder_from_context(itemref)
+                        new_paths = import_image_files(multiple=False, subfolder=subfolder)
                         if new_paths:
                             vref.set(new_paths[0])
                             itemref[kref] = new_paths[0]
