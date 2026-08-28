@@ -7,7 +7,7 @@
         "contactMessage": "Se você procura alguém com energia para aprender rápido, construir com qualidade e evoluir junto com o time, vamos conversar.",
         "location": "São José dos Campos - SP",
         "availability": "Disponível para estágio e projetos",
-        "cvUrl": "assets/Currículo_Daniel Dias Pereira.pdf",
+        "cvUrl": "assets/Daniel_Dias_Pereira_Curriculo.pdf",
         "email": "danieldpereira.dev@gmail.com",
         "socials": [
             {
@@ -29,7 +29,7 @@
         "cta": [
             {
                 "label": "Baixar CV",
-                "url": "assets/Currículo_Daniel Dias Pereira.pdf",
+                "url": "assets/Daniel_Dias_Pereira_Curriculo.pdf",
                 "type": "primary"
             },
             {
